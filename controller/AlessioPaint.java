@@ -10,6 +10,7 @@ import java.util.ArrayList;
 public class AlessioPaint {
 
     private FiguraGeometrica[] vetor;
+    private ArrayList<FiguraGeometrica> figuraGeometricaArrayList;  //fiz ----------
     private BasicConsole tela;
     private DesenhoBoard canvas;
 
@@ -44,11 +45,11 @@ public class AlessioPaint {
             switch (opcao){
                 case QUADRADO:
                     Quadrado quad = tela.askQuadrado();
-                    insertFiguraGeométrica(quad, 0);
+                    insertFiguraGeometrica(quad);
                     break;
                 case RETANGULO:
                     Retangulo retangulo = new Retangulo();
-                    insertFiguraGeométrica(retangulo, 1);
+                    insertFiguraGeometrica(retangulo);
                     break;
                 case LISTAR:
                     //Retangulo retangulo = new Retangulo();
@@ -73,12 +74,14 @@ public class AlessioPaint {
         }while (opcao != OpcoesMenuEnum.SAIR);
     }
 
-    public boolean insertFiguraGeométrica(FiguraGeometrica fig, int i){
-        vetor[i] = fig;
-        //Aqui tem um for
-        // procura posição vazia
-        // Se está cheio retorna False
-        return true;
+    public boolean insertFiguraGeometrica(FiguraGeometrica fig){
+        if(figuraGeometricaArrayList.size() <10 ){
+            figuraGeometricaArrayList.add(fig);
+            return true;
+        }else{
+            return false;
+        }
+        
     }
 
     public void testaArrayList(){

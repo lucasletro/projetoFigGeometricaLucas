@@ -54,7 +54,7 @@ public class BasicConsole {
 
         int opcao = in.nextInt();
 
-        switch (opcao){
+        switch (opcao){ //fiz
             case 1:
                 return OpcoesMenuEnum.QUADRADO;
             case 2:
