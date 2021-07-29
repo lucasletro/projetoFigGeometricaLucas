@@ -44,7 +44,7 @@ public class BasicConsole {
 
     public OpcoesMenuEnum askOpcaoMenuPrincial(){
         //Loop até entregar uma opção válida
-        showMsg("Digite uma opção \n" +
+        showMsg("Digite uma op��o \n" +
                 "1 - Criar Quadrado\n" +
                 "2 - Criar Retangulo\n" +
                 "6 - Apagar Item\n" +

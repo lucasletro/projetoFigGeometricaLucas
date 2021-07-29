@@ -9,13 +9,13 @@ import java.util.ArrayList;
 
 public class AlessioPaint {
 
-    private FiguraGeometrica[] vetor;
+    //private FiguraGeometrica[] vetor;
     private ArrayList<FiguraGeometrica> figuraGeometricaArrayList;  //fiz ----------
     private BasicConsole tela;
     private DesenhoBoard canvas;
 
     public AlessioPaint(){
-        vetor= new FiguraGeometrica[5];
+        //vetor= new FiguraGeometrica[5];
         tela = new BasicConsole();
         canvas = new DesenhoBoard();
     }
@@ -45,7 +45,7 @@ public class AlessioPaint {
             switch (opcao){
                 case QUADRADO:
                     Quadrado quad = tela.askQuadrado();
-                    insertFiguraGeometrica(quad);
+                    insertFiguraGeometrica(quad);     
                     break;
                 case RETANGULO:
                     Retangulo retangulo = new Retangulo();
@@ -54,14 +54,26 @@ public class AlessioPaint {
                 case LISTAR:
                     //Retangulo retangulo = new Retangulo();
                     //insertFiguraGeométrica(retangulo, 1);
-                    for (int i = 0; i < vetor.length; i++) {
-                        if(vetor[i] != null) {
-                            System.out.println(vetor[i].toString());
+                    for (int i = 0; i < figuraGeometricaArrayList.size(); i++) {
+                        if(figuraGeometricaArrayList.get(i) != null) {
+                            System.out.println(figuraGeometricaArrayList.get(i).toString());
                         }
                     }
                     break;
+                case APAGAR:
+                    int index = tela.askInt("Digite um index para apagar "); 
+                    if(index < figuraGeometricaArrayList.size() ){
+                        figuraGeometricaArrayList.remove(index);
+                        tela.showMsg("index" + index + " removido");
+                    }else{
+                        tela.showMsg("Index inexistente");
+                    }
+                    
+                    break;
+                    
+                    
                 case DESENHAR:
-                    canvas.desenhar(vetor);
+                    //canvas.desenhar(vetor);
                     break;
                 case SAIR:
 
