@@ -1,4 +1,4 @@
-package pc2.lab.aula09.model;
+package pc2.lab.aula09.projetoFigGeometricaLucas.model;
 
 public class Retangulo extends Quadrilatero{
 
@@ -59,8 +59,13 @@ public class Retangulo extends Quadrilatero{
 
     @Override
     public String toString() {
-        return "Retangulo{" +
-                "origem=" + origem +
-                '}';
+        return "Retangulo: \n" +
+                "\nPerimetro: " + getPerimetro() + 
+                "\n Area: " + getArea();
     }
 }
+
+
+               /* "Quadrado: \n" +
+                "Tamanho do lado: " + tamanhoLado + "\nPerimetro: " + getPerimetro() + 
+                "\n Area: " + getArea();*/
