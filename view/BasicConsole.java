@@ -39,7 +39,7 @@ public class BasicConsole {
         showLnMsg("Digite a base do retangulo");
         int base  = in.nextInt();
         //requisição de altura
-        showLnMsg("Digite a base do retangulo");
+        showLnMsg("Digite a altura do retangulo");
         int altura  = in.nextInt();
         
         Retangulo ret = new Retangulo(base, altura);

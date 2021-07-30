@@ -59,9 +59,10 @@ public class Retangulo extends Quadrilatero{
 
     @Override
     public String toString() {
-        return "Retangulo: \n" +
-                "\nPerimetro: " + getPerimetro() + 
-                "\n Area: " + getArea();
+        return "\n\nRetangulo: " + "\nBase: " + superiorDireito.getX() +
+                "\nAltura: " + superiorDireito.getY() +
+                "\nPerimetro: " + getPerimetroRetangulo() + 
+                "\n Area: " + getAreaRetangulo();
     }
 }
 
