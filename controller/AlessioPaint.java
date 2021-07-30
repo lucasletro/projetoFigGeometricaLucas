@@ -1,9 +1,9 @@
-package pc2.lab.aula09.controller;
+package pc2.lab.aula09.projetoFigGeometricaLucas.controller;
 
-import pc2.lab.aula09.model.*;
-import pc2.lab.aula09.model.enums.OpcoesMenuEnum;
-import pc2.lab.aula09.view.BasicConsole;
-import pc2.lab.aula09.view.DesenhoBoard;
+import pc2.lab.aula09.projetoFigGeometricaLucas.model.*;
+import pc2.lab.aula09.projetoFigGeometricaLucas.model.enums.OpcoesMenuEnum;
+import pc2.lab.aula09.projetoFigGeometricaLucas.view.BasicConsole;
+import pc2.lab.aula09.projetoFigGeometricaLucas.view.DesenhoBoard;
 
 import java.util.ArrayList;
 
