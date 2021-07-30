@@ -1,6 +1,6 @@
-package pc2.lab.aula09.view;
+package pc2.lab.aula09.projetoFigGeometricaLucas.view;
 
-import pc2.lab.aula09.model.FiguraGeometrica;
+import pc2.lab.aula09.projetoFigGeometricaLucas.model.FiguraGeometrica;
 
 import javax.swing.*;
 import java.awt.*;

@@ -1,7 +1,7 @@
-package pc2.lab.aula09.view;
+package pc2.lab.aula09.projetoFigGeometricaLucas.view;
 
-import pc2.lab.aula09.model.enums.OpcoesMenuEnum;
-import pc2.lab.aula09.model.Quadrado;
+import pc2.lab.aula09.projetoFigGeometricaLucas.model.enums.OpcoesMenuEnum;
+import pc2.lab.aula09.projetoFigGeometricaLucas.model.Quadrado;
 
 import java.util.Scanner;
 
@@ -22,12 +22,12 @@ public class BasicConsole {
     }
 
     public int askInt(String msg){
-        showMsg(msg);
+        showLnMsg(msg);
         return in.nextInt();
     }
 
     public Quadrado askQuadrado(){
-        showMsg("Digite um interio para o tamanho do lado do quadrado");
+        showLnMsg("Digite um inteiro para o tamanho do lado do quadrado");
         int tamanho  = in.nextInt();
         Quadrado quad = new Quadrado(tamanho);
 

@@ -1,6 +1,6 @@
-package pc2.lab.aula09.controller;
+package pc2.lab.aula09.projetoFigGeometricaLucas.controller;
 
-import pc2.lab.aula09.model.*;
+//import pc2.lab.aula09.model.*;
 //import pc2.lab.aula09.view.BasicConsole;
 
 public class ProgramaTeste {

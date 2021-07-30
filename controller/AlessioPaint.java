@@ -15,6 +15,7 @@ public class AlessioPaint {
     private DesenhoBoard canvas;
 
     public AlessioPaint(){
+        figuraGeometricaArrayList = new ArrayList<>();
         //vetor= new FiguraGeometrica[5];
         tela = new BasicConsole();
         canvas = new DesenhoBoard();
@@ -64,9 +65,9 @@ public class AlessioPaint {
                     int index = tela.askInt("Digite um index para apagar "); 
                     if(index < figuraGeometricaArrayList.size() ){
                         figuraGeometricaArrayList.remove(index);
-                        tela.showMsg("index" + index + " removido");
+                        tela.showLnMsg("index" + index + " removido");
                     }else{
-                        tela.showMsg("Index inexistente");
+                        tela.showLnMsg("Index inexistente");
                     }
                     
                     break;
