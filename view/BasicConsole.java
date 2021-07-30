@@ -4,6 +4,7 @@ import pc2.lab.aula09.projetoFigGeometricaLucas.model.enums.OpcoesMenuEnum;
 import pc2.lab.aula09.projetoFigGeometricaLucas.model.Quadrado;
 
 import java.util.Scanner;
+import pc2.lab.aula09.projetoFigGeometricaLucas.model.Retangulo;
 
 public class BasicConsole {
 
@@ -32,6 +33,18 @@ public class BasicConsole {
         Quadrado quad = new Quadrado(tamanho);
 
         return quad;
+    }
+    
+      public Retangulo askRetangulo(){
+        showLnMsg("Digite a base do retangulo");
+        int base  = in.nextInt();
+        //requisição de altura
+        showLnMsg("Digite a base do retangulo");
+        int altura  = in.nextInt();
+        
+        Retangulo ret = new Retangulo(base, altura);
+
+        return ret ;
     }
 
     public int askInt(){
