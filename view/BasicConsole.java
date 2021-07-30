@@ -5,6 +5,7 @@ import pc2.lab.aula09.projetoFigGeometricaLucas.model.Quadrado;
 
 import java.util.Scanner;
 import pc2.lab.aula09.projetoFigGeometricaLucas.model.Retangulo;
+import pc2.lab.aula09.projetoFigGeometricaLucas.model.Triangulo;
 
 public class BasicConsole {
 
@@ -28,7 +29,7 @@ public class BasicConsole {
     }
 
     public Quadrado askQuadrado(){
-        showLnMsg("Digite um inteiro para o tamanho do lado do quadrado");
+        showLnMsg("Digite um inteiro para o tamanho do lado do quadrado: ");
         int tamanho  = in.nextInt();
         Quadrado quad = new Quadrado(tamanho);
 
@@ -46,6 +47,18 @@ public class BasicConsole {
 
         return ret ;
     }
+      
+    public Triangulo askTriangulo(){
+        showLnMsg("Digite a base do Triangulo: ");
+        int base  = in.nextInt();
+        //requisição de altura
+        showLnMsg("Digite a altura do Triangulo: ");
+        int altura  = in.nextInt();
+        
+        Triangulo tri = new Triangulo(base, altura);
+                
+        return tri;
+    }
 
     public int askInt(){
         return in.nextInt();
@@ -56,10 +69,11 @@ public class BasicConsole {
     }
 
     public OpcoesMenuEnum askOpcaoMenuPrincial(){
-        //Loop atÃ© entregar uma opÃ§Ã£o vÃ¡lida
+        //Loop para entregar uma opção valida
         showMsg("Digite uma opção \n" +
                 "1 - Criar Quadrado\n" +
                 "2 - Criar Retangulo\n" +
+                "3 - Criar Triangulo\n" +
                 "6 - Apagar Item\n" +
                 "9 - Listar\n" +
                 "7 - Desenhar\n" +
@@ -72,6 +86,8 @@ public class BasicConsole {
                 return OpcoesMenuEnum.QUADRADO;
             case 2:
                 return OpcoesMenuEnum.RETANGULO;
+            case 3:
+                return OpcoesMenuEnum.TRIANGULO;
             case 6:
                 return OpcoesMenuEnum.APAGAR;
             case 7:
