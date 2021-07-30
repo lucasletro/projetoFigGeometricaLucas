@@ -1,4 +1,4 @@
-package pc2.lab.aula09.model;
+package pc2.lab.aula09.projetoFigGeometricaLucas.model;
 
 public class Quadrado extends Retangulo{
 
@@ -50,9 +50,9 @@ public class Quadrado extends Retangulo{
 
     @Override
     public String toString() {
-        return "Quadrado{" +
-                "tamanhoLado=" + tamanhoLado +
-                '}';
+        return "Quadrado: \n" +
+                "Tamanho do lado: " + tamanhoLado + "\nPerimetro: " + getPerimetro() + 
+                "\n Area: " + getArea();
     }
 
     @Override
