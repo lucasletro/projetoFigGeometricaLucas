@@ -41,7 +41,7 @@ public class AlessioPaint {
         do{
             opcao = tela.askOpcaoMenuPrincial();
 
-            tela.showMsg("escolhi: "+ opcao+"\n\n");
+            tela.showLnMsg("\n\nOpção escolhida : "+ opcao+"\n\n");
 
             switch (opcao){
                 case QUADRADO:
