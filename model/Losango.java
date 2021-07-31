@@ -2,6 +2,18 @@ package pc2.lab.aula09.projetoFigGeometricaLucas.model;
 
 public class Losango extends Quadrilatero{
     
+    private int diagonalInferior;
+    private int diagonalSuperior;
+    private int tamanhoLado;
+
+    public Losango(int diagonalInferior, int diagonalSuperior, int tamanhoLado) {
+        this.diagonalInferior = diagonalInferior;
+        this.diagonalSuperior = diagonalSuperior;
+        this.tamanhoLado = tamanhoLado;
+    }
+    
+    
+    
     public Losango(int base, int altura){
         inferiorEsquerdo = new Ponto(0,0);
         inferiorDireito = new Ponto(base,0);
@@ -9,65 +21,26 @@ public class Losango extends Quadrilatero{
         superiorEsquerdo = new Ponto(0,altura);
     }
     
-    // GETTERS AND SETTERS ------------------------
-
-    public Ponto getOrigem() {
-        return origem;
-    }
-
-    public void setOrigem(Ponto origem) {
-        this.origem = origem;
-    }
-
-    public Ponto getInferiorEsquerdo() {
-        return inferiorEsquerdo;
-    }
-
-    public void setInferiorEsquerdo(Ponto inferiorEsquerdo) {
-        this.inferiorEsquerdo = inferiorEsquerdo;
-    }
-
-    public Ponto getInferiorDireito() {
-        return inferiorDireito;
-    }
-
-    public void setInferiorDireito(Ponto inferiorDireito) {
-        this.inferiorDireito = inferiorDireito;
-    }
-
-    public Ponto getSuperiorDireito() {
-        return superiorDireito;
-    }
-
-    public void setSuperiorDireito(Ponto superiorDireito) {
-        this.superiorDireito = superiorDireito;
-    }
-
-    public Ponto getSuperiorEsquerdo() {
-        return superiorEsquerdo;
-    }
-
-    public void setSuperiorEsquerdo(Ponto superiorEsquerdo) {
-        this.superiorEsquerdo = superiorEsquerdo;
-    }
     
     //area = diagonal maior * diagonal menor / 2   D*d / 2
     
     public double getAreaLosango(){
-        return superiorDireito.getX() * superiorEsquerdo.getY() / 2;  //revisar ------------------------ 
+        return diagonalInferior * diagonalSuperior / 2;
     }
     
-    public double getPerimetroRetangulo(){
-        return 
+    public double getPerimetroLosango(){
+        return tamanhoLado * 4;
     }
+//----------------------------------------------------------------------
 
     @Override
     public String toString() {
-        return "\n\Losango: " + "\nBase: " + superiorDireito.getX() +     //alterar criar area e perimetro
-                "\nAltura: " + superiorDireito.getY() +
-                "\nPerimetro: " + getPerimetroRetangulo() + 
+        return "\n\nLosango: " + 
+                "\nPerimetro: " + getPerimetroLosango() + 
                 "\n Area: " + getAreaLosango();
+  
     }
+    
     }
     
     

@@ -4,6 +4,7 @@ import pc2.lab.aula09.projetoFigGeometricaLucas.model.enums.OpcoesMenuEnum;
 import pc2.lab.aula09.projetoFigGeometricaLucas.model.Quadrado;
 
 import java.util.Scanner;
+import pc2.lab.aula09.projetoFigGeometricaLucas.model.Losango;
 import pc2.lab.aula09.projetoFigGeometricaLucas.model.Retangulo;
 import pc2.lab.aula09.projetoFigGeometricaLucas.model.Triangulo;
 
@@ -59,6 +60,22 @@ public class BasicConsole {
                 
         return tri;
     }
+    
+    public Losango askLosango(){
+        showLnMsg("Digite a diagonal inferior do losango: ");
+        int diagonalInferior  = in.nextInt();
+        //requisição de altura
+        showLnMsg("Digite a diagonal superior do losango: ");
+        int diagonalSuperior  = in.nextInt();
+        
+        showLnMsg("Digite o tamanho do lado do losango: ");
+        int tamanhoLado  = in.nextInt();
+        
+        Losango los = new Losango(diagonalInferior, diagonalSuperior, tamanhoLado);
+        return los;
+    }
+    
+    
 
     public int askInt(){
         return in.nextInt();
@@ -74,6 +91,7 @@ public class BasicConsole {
                 "1 - Criar Quadrado\n" +
                 "2 - Criar Retangulo\n" +
                 "3 - Criar Triangulo\n" +
+                "4 - Criar Losango\n" +
                 "6 - Apagar Item\n" +
                 "9 - Listar\n" +
                 "7 - Desenhar\n" +
@@ -88,6 +106,8 @@ public class BasicConsole {
                 return OpcoesMenuEnum.RETANGULO;
             case 3:
                 return OpcoesMenuEnum.TRIANGULO;
+            case 4:
+                return OpcoesMenuEnum.LOSANGO;
             case 6:
                 return OpcoesMenuEnum.APAGAR;
             case 7:

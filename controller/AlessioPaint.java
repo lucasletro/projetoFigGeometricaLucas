@@ -56,6 +56,10 @@ public class AlessioPaint {
                     Triangulo tri = tela.askTriangulo();
                     insertFiguraGeometrica(tri);
                     break;
+                case LOSANGO:
+                    Losango los = tela.askLosango();
+                    insertFiguraGeometrica(los);
+                    break;
                 case LISTAR:
                     //Retangulo retangulo = new Retangulo();
                     //insertFiguraGeométrica(retangulo, 1);
