@@ -37,11 +37,11 @@ public class Losango extends Quadrilatero{
     public String toString() {
         return "\n\nLosango: " + 
                 "\nPerimetro: " + getPerimetroLosango() + 
-                "\n Area: " + getAreaLosango();
+                "\nArea: " + getAreaLosango();
   
     }
     
     }
     
     
-}
+

@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class AlessioPaint {
 
     //private FiguraGeometrica[] vetor;
-    private ArrayList<FiguraGeometrica> figuraGeometricaArrayList;  //fiz ----------
+    private ArrayList<FiguraGeometrica> figuraGeometricaArrayList;  
     private BasicConsole tela;
     private DesenhoBoard canvas;
 
