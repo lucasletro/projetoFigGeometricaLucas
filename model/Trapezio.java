@@ -22,5 +22,60 @@ public class Trapezio extends Quadrilatero {
         superior = new Reta(ponto3, ponto4);
         esquerda = new Reta(ponto4, pontoInicial);
     }
+    
+    //=====================================================================================================
+
+    public Reta getSuperior() {
+        return superior;
+    }
+
+    public void setSuperior(Reta superior) {
+        this.superior = superior;
+    }
+
+    public Reta getInferior() {
+        return inferior;
+    }
+
+    public void setInferior(Reta inferior) {
+        this.inferior = inferior;
+    }
+
+    public Reta getDireita() {
+        return direita;
+    }
+
+    public void setDireita(Reta direita) {
+        this.direita = direita;
+    }
+
+    public Reta getEsquerda() {
+        return esquerda;
+    }
+
+    public void setEsquerda(Reta esquerda) {
+        this.esquerda = esquerda;
+    }
+    
+    // area = ((B*b)/2)*h
+    
+    public double getAreaTrapezio(){
+        return 
+    }
+    
+    public double getPerimetroTrapezio(){
+        return 
+    }
+
+    @Override
+    public String toString() {
+        return "\n\Trapezio: " + "\nBase: " + superiorDireito.getX() +     //criar area e perimetro e alterar
+                "\nAltura: " + superiorDireito.getY() +
+                "\nPerimetro: " + getPerimetroTrapezio() + 
+                "\n Area: " + getAreaTrapezio();
+    }
+    
+    
+    
 
 }

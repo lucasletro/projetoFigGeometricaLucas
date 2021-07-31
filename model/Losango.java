@@ -1,20 +1,22 @@
 package pc2.lab.aula09.projetoFigGeometricaLucas.model;
 
-public class Retangulo extends Quadrilatero{
-
-    public Retangulo() {
-        this(1, 2);
-//        inferiorEsquerdo = new Ponto(0,0);
-//        inferiorDireito = new Ponto(2,0);
-//        superiorDireito = new Ponto(1,2);
-//        superiorEsquerdo = new Ponto(0,2);
-    }
-
-    public Retangulo(int base, int altura) {
+public class Losango extends Quadrilatero{
+    
+    public Losango(int base, int altura){
         inferiorEsquerdo = new Ponto(0,0);
         inferiorDireito = new Ponto(base,0);
         superiorDireito = new Ponto(base,altura);
         superiorEsquerdo = new Ponto(0,altura);
+    }
+    
+    // GETTERS AND SETTERS ------------------------
+
+    public Ponto getOrigem() {
+        return origem;
+    }
+
+    public void setOrigem(Ponto origem) {
+        this.origem = origem;
     }
 
     public Ponto getInferiorEsquerdo() {
@@ -48,20 +50,25 @@ public class Retangulo extends Quadrilatero{
     public void setSuperiorEsquerdo(Ponto superiorEsquerdo) {
         this.superiorEsquerdo = superiorEsquerdo;
     }
-
-    public double getAreaRetangulo(){
-        return superiorDireito.getX() * superiorDireito.getY();
+    
+    //area = diagonal maior * diagonal menor / 2   D*d / 2
+    
+    public double getAreaLosango(){
+        return superiorDireito.getX() * superiorEsquerdo.getY() / 2;  //revisar ------------------------ 
     }
-
+    
     public double getPerimetroRetangulo(){
-        return superiorDireito.getX()*2 + superiorDireito.getY()*2;
+        return 
     }
 
     @Override
     public String toString() {
-        return "\n\nRetangulo: " + "\nBase: " + superiorDireito.getX() +
+        return "\n\Losango: " + "\nBase: " + superiorDireito.getX() +     //alterar criar area e perimetro
                 "\nAltura: " + superiorDireito.getY() +
                 "\nPerimetro: " + getPerimetroRetangulo() + 
-                "\n Area: " + getAreaRetangulo();
+                "\n Area: " + getAreaLosango();
     }
+    }
+    
+    
 }
