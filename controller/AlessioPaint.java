@@ -78,12 +78,12 @@ public class AlessioPaint {
                     }
                     break;
                 case APAGAR:
-                    int index = tela.askInt("Digite um index para apagar ");
+                    int index = tela.askInt("Digite um index para apagar: ");
                     if (index < figuraGeometricaArrayList.size()) {
                         figuraGeometricaArrayList.remove(index);
-                        tela.showLnMsg("index " + index + " removido.");
+                        tela.showLnMsg("index " + index + " removido!");
                     } else {
-                        tela.showLnMsg("Index inexistente");
+                        tela.showLnMsg("Index inexistente.");
                     }
 
                     break;
