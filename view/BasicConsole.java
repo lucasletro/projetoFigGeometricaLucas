@@ -4,6 +4,7 @@ import pc2.lab.aula09.projetoFigGeometricaLucas.model.enums.OpcoesMenuEnum;
 import pc2.lab.aula09.projetoFigGeometricaLucas.model.Quadrado;
 
 import java.util.Scanner;
+import pc2.lab.aula09.projetoFigGeometricaLucas.model.Circulo;
 import pc2.lab.aula09.projetoFigGeometricaLucas.model.Losango;
 import pc2.lab.aula09.projetoFigGeometricaLucas.model.Retangulo;
 import pc2.lab.aula09.projetoFigGeometricaLucas.model.Triangulo;
@@ -12,94 +13,100 @@ public class BasicConsole {
 
     protected Scanner in;
 
-    public BasicConsole(){
+    public BasicConsole() {
         in = new Scanner(System.in);
     }
 
-    public void showLnMsg(String msg){
+    public void showLnMsg(String msg) {
         System.out.println(msg);
     }
 
-    public void showMsg(String msg){
+    public void showMsg(String msg) {
         System.out.print(msg);
     }
 
-    public int askInt(String msg){
+    public int askInt(String msg) {
         showLnMsg(msg);
         return in.nextInt();
     }
 
-    public Quadrado askQuadrado(){
+    public Quadrado askQuadrado() {
         showLnMsg("Digite um inteiro para o tamanho do lado do quadrado: ");
-        int tamanho  = in.nextInt();
+        int tamanho = in.nextInt();
         Quadrado quad = new Quadrado(tamanho);
 
         return quad;
     }
-    
-      public Retangulo askRetangulo(){
+
+    public Retangulo askRetangulo() {
         showLnMsg("Digite a base do retangulo");
-        int base  = in.nextInt();
+        int base = in.nextInt();
         //requisição de altura
         showLnMsg("Digite a altura do retangulo");
-        int altura  = in.nextInt();
-        
+        int altura = in.nextInt();
+
         Retangulo ret = new Retangulo(base, altura);
 
-        return ret ;
+        return ret;
     }
-      
-    public Triangulo askTriangulo(){
+
+    public Triangulo askTriangulo() {
         showLnMsg("Digite a base do Triangulo: ");
-        int base  = in.nextInt();
+        int base = in.nextInt();
         //requisição de altura
         showLnMsg("Digite a altura do Triangulo: ");
-        int altura  = in.nextInt();
-        
+        int altura = in.nextInt();
+
         Triangulo tri = new Triangulo(base, altura);
-                
+
         return tri;
     }
-    
-    public Losango askLosango(){
+
+    public Losango askLosango() {
         showLnMsg("Digite a diagonal inferior do losango: ");
-        int diagonalInferior  = in.nextInt();
+        int diagonalInferior = in.nextInt();
         //requisição de altura
         showLnMsg("Digite a diagonal superior do losango: ");
-        int diagonalSuperior  = in.nextInt();
-        
+        int diagonalSuperior = in.nextInt();
+
         showLnMsg("Digite o tamanho do lado do losango: ");
-        int tamanhoLado  = in.nextInt();
-        
+        int tamanhoLado = in.nextInt();
+
         Losango los = new Losango(diagonalInferior, diagonalSuperior, tamanhoLado);
         return los;
     }
-    
-    
 
-    public int askInt(){
+    public Circulo askCirculo() {
+        showLnMsg("Digite um valor para o raio do circulo: ");
+        int raio = in.nextInt();
+        Circulo cir = new Circulo(raio);
+        return cir;
+    }
+
+    public int askInt() {
         return in.nextInt();
     }
 
-    public boolean hasNextInt(){
+    public boolean hasNextInt() {
         return in.hasNextInt();
     }
 
-    public OpcoesMenuEnum askOpcaoMenuPrincial(){
+    public OpcoesMenuEnum askOpcaoMenuPrincial() {
         //Loop para entregar uma opção valida
-        showMsg("\nDigite uma opção \n" +
-                "1 - Criar Quadrado\n" +
-                "2 - Criar Retangulo\n" +
-                "3 - Criar Triangulo\n" +
-                "4 - Criar Losango\n" +
-                "6 - Apagar Item\n" +
-                "9 - Listar\n" +
-                "7 - Desenhar\n" +
-                "0 - Sair");
+        showMsg("\nDigite uma opção \n"
+                + "1 - Criar Quadrado\n"
+                + "2 - Criar Retangulo\n"
+                + "3 - Criar Triangulo\n"
+                + "4 - Criar Losango\n"
+                + "5 - Criar Circulo\n"
+                + "6 - Apagar Item\n"
+                + "9 - Listar\n"
+                + "7 - Desenhar\n"
+                + "0 - Sair");
 
         int opcao = in.nextInt();
 
-        switch (opcao){ //fiz
+        switch (opcao) { 
             case 1:
                 return OpcoesMenuEnum.QUADRADO;
             case 2:
@@ -108,6 +115,8 @@ public class BasicConsole {
                 return OpcoesMenuEnum.TRIANGULO;
             case 4:
                 return OpcoesMenuEnum.LOSANGO;
+            case 5:
+                return OpcoesMenuEnum.CIRCULO;
             case 6:
                 return OpcoesMenuEnum.APAGAR;
             case 7:

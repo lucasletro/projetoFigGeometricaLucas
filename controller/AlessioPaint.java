@@ -60,6 +60,10 @@ public class AlessioPaint {
                     Losango los = tela.askLosango();
                     insertFiguraGeometrica(los);
                     break;
+                case CIRCULO:
+                    Circulo cir = tela.askCirculo();
+                    insertFiguraGeometrica(cir);
+                    break;
                 case LISTAR:
                     //Retangulo retangulo = new Retangulo();
                     //insertFiguraGeométrica(retangulo, 1);
