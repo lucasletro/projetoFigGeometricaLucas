@@ -83,20 +83,20 @@ public class BasicConsole {
         Circulo cir = new Circulo(raio);
         return cir;
     }
-    
-    public Trapezio askTrapezio(){  //
+
+    public Trapezio askTrapezio() {  //
         showLnMsg("Digite um valor para a base maior do trapezio: ");
         int baseMaior = in.nextInt();
-        
+
         showLnMsg("Digite um valor para a base menor do trapezio: ");
         int baseMenor = in.nextInt();
-        
+
         showLnMsg("Digite um valor para a altura do trapezio: ");
         int altura = in.nextInt();
-        
+
         showLnMsg("Digite um valor para o lado do trapezio: ");
         int lado = in.nextInt();
-        
+
         Trapezio trap = new Trapezio(baseMaior, baseMenor, altura, lado);
         return trap;
     }
@@ -117,7 +117,7 @@ public class BasicConsole {
                 + "3 - Criar Triangulo\n"
                 + "4 - Criar Losango\n"
                 + "5 - Criar Circulo\n"
-                + "6 - Criar Trapezio\n"  //
+                + "6 - Criar Trapezio\n" //
                 + "7 - Apagar Item\n"
                 + "8 - Desenhar\n"
                 + "9 - Listar\n"
@@ -125,7 +125,7 @@ public class BasicConsole {
 
         int opcao = in.nextInt();
 
-        switch (opcao) { 
+        switch (opcao) {
             case 1:
                 return OpcoesMenuEnum.QUADRADO;
             case 2:
