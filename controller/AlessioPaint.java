@@ -64,6 +64,10 @@ public class AlessioPaint {
                     Circulo cir = tela.askCirculo();
                     insertFiguraGeometrica(cir);
                     break;
+                case TRAPEZIO:
+                    Trapezio trap = tela.askTrapezio();
+                    insertFiguraGeometrica(trap);
+                    break;
                 case LISTAR:
                     //Retangulo retangulo = new Retangulo();
                     //insertFiguraGeométrica(retangulo, 1);
@@ -77,7 +81,7 @@ public class AlessioPaint {
                     int index = tela.askInt("Digite um index para apagar "); 
                     if(index < figuraGeometricaArrayList.size() ){
                         figuraGeometricaArrayList.remove(index);
-                        tela.showLnMsg("index" + index + " removido");
+                        tela.showLnMsg("index " + index + " removido.");
                     }else{
                         tela.showLnMsg("Index inexistente");
                     }

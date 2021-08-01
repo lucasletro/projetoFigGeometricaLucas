@@ -7,6 +7,7 @@ import java.util.Scanner;
 import pc2.lab.aula09.projetoFigGeometricaLucas.model.Circulo;
 import pc2.lab.aula09.projetoFigGeometricaLucas.model.Losango;
 import pc2.lab.aula09.projetoFigGeometricaLucas.model.Retangulo;
+import pc2.lab.aula09.projetoFigGeometricaLucas.model.Trapezio;
 import pc2.lab.aula09.projetoFigGeometricaLucas.model.Triangulo;
 
 public class BasicConsole {
@@ -82,6 +83,23 @@ public class BasicConsole {
         Circulo cir = new Circulo(raio);
         return cir;
     }
+    
+    public Trapezio askTrapezio(){  //
+        showLnMsg("Digite um valor para a base maior do trapezio: ");
+        int baseMaior = in.nextInt();
+        
+        showLnMsg("Digite um valor para a base menor do trapezio: ");
+        int baseMenor = in.nextInt();
+        
+        showLnMsg("Digite um valor para a altura do trapezio: ");
+        int altura = in.nextInt();
+        
+        showLnMsg("Digite um valor para o lado do trapezio: ");
+        int lado = in.nextInt();
+        
+        Trapezio trap = new Trapezio(baseMaior, baseMenor, altura, lado);
+        return trap;
+    }
 
     public int askInt() {
         return in.nextInt();
@@ -99,9 +117,10 @@ public class BasicConsole {
                 + "3 - Criar Triangulo\n"
                 + "4 - Criar Losango\n"
                 + "5 - Criar Circulo\n"
-                + "6 - Apagar Item\n"
+                + "6 - Criar Trapezio\n"  //
+                + "7 - Apagar Item\n"
+                + "8 - Desenhar\n"
                 + "9 - Listar\n"
-                + "7 - Desenhar\n"
                 + "0 - Sair");
 
         int opcao = in.nextInt();
@@ -118,8 +137,10 @@ public class BasicConsole {
             case 5:
                 return OpcoesMenuEnum.CIRCULO;
             case 6:
-                return OpcoesMenuEnum.APAGAR;
+                return OpcoesMenuEnum.TRAPEZIO;  //
             case 7:
+                return OpcoesMenuEnum.APAGAR;
+            case 8:
                 return OpcoesMenuEnum.DESENHAR;
             case 9:
                 return OpcoesMenuEnum.LISTAR;
