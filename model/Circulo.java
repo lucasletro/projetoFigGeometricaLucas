@@ -9,6 +9,11 @@ public class Circulo extends FiguraGeometrica {
         this.raio = raio;
 
     }
+    
+    /**
+     * Função que retorna perimetro do circulo.
+     * @return 
+     */
 
     public double getPerimetroCirculo() {
         return 2 * pi * raio;
