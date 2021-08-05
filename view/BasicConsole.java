@@ -84,7 +84,7 @@ public class BasicConsole {
         return cir;
     }
 
-    public Trapezio askTrapezio() {  //
+    public Trapezio askTrapezio() {  
         showLnMsg("Digite um valor para a base maior do trapezio: ");
         int baseMaior = in.nextInt();
 
@@ -117,14 +117,14 @@ public class BasicConsole {
                 + "3 - Criar Triangulo\n"
                 + "4 - Criar Losango\n"
                 + "5 - Criar Circulo\n"
-                + "6 - Criar Trapezio\n" //
+                + "6 - Criar Trapezio\n" 
                 + "7 - Apagar Item\n"
                 + "8 - Desenhar\n"
                 + "9 - Listar\n"
                 + "0 - Sair");
 
         int opcao = in.nextInt();
-
+        
         switch (opcao) {
             case 1:
                 return OpcoesMenuEnum.QUADRADO;
@@ -137,7 +137,7 @@ public class BasicConsole {
             case 5:
                 return OpcoesMenuEnum.CIRCULO;
             case 6:
-                return OpcoesMenuEnum.TRAPEZIO;  //
+                return OpcoesMenuEnum.TRAPEZIO; 
             case 7:
                 return OpcoesMenuEnum.APAGAR;
             case 8:

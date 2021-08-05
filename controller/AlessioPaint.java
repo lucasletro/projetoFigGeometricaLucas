@@ -85,14 +85,14 @@ public class AlessioPaint {
                     } else {
                         tela.showLnMsg("Index inexistente.");
                     }
-
                     break;
 
                 case DESENHAR:
                     //canvas.desenhar(vetor);
                     break;
+                    
                 case SAIR:
-
+                    
                     break;
                 default:
             }
