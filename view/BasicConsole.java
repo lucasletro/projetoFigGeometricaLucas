@@ -121,13 +121,14 @@ public class BasicConsole {
                 + "7 - Apagar Item\n"
                 + "8 - Desenhar\n"
                 + "9 - Listar\n"
-                + "0 - Sair");
+                + "0 - Sair\n");
 
         int opcao = in.nextInt();
         
         switch (opcao) {
             case 1:
-                return OpcoesMenuEnum.QUADRADO;
+                return askOpcaoMenuSecundario();
+                //return OpcoesMenuEnum.QUADRADO;
             case 2:
                 return OpcoesMenuEnum.RETANGULO;
             case 3:
@@ -141,12 +142,45 @@ public class BasicConsole {
             case 7:
                 return OpcoesMenuEnum.APAGAR;
             case 8:
-                return OpcoesMenuEnum.DESENHAR;
+                return OpcoesMenuEnum.DESENHAR;  //
             case 9:
-                return OpcoesMenuEnum.LISTAR;
+                return OpcoesMenuEnum.LISTAR;   //
             default:
-                return OpcoesMenuEnum.SAIR;
+                return OpcoesMenuEnum.SAIR;  //
         }
     }
+    
+    //====================SUB-MENU===================================
+    
+    public OpcoesMenuEnum askOpcaoMenuSecundario(){
+        showMsg("\n\nDigite uma opção \n"
+                + "1 - Novo \n"
+                + "2 - Editar\n"
+                + "3 - Listar\n"
+                + "4 - Mostrar\n"
+                + "5 - Apagar\n"
+                + "6 - Voltar\n");
+        
+        int opcao1 = in.nextInt();
+        
+        switch(opcao1) {
+            case 1:
+                return OpcoesMenuEnum.QUADRADO;
+            case 2:
+                return OpcoesMenuEnum.EDITAR;
+            case 3:
+                return OpcoesMenuEnum.LISTAR;  //
+            case 4:
+                return OpcoesMenuEnum.MOSTRAR;
+            case 5:
+                return OpcoesMenuEnum.APAGAR; //
+            case 6: 
+                return askOpcaoMenuPrincial();  //ok voltar
+                //return OpcoesMenuEnum.VOLTAR; 
+            default:
+                return OpcoesMenuEnum.SAIR;  // ok sair
+        }
+    }
+    
 
 }

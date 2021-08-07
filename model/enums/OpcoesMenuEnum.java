@@ -4,6 +4,6 @@ public enum OpcoesMenuEnum {
     CIRCULO, QUADRADO, RETANGULO, LISTAR, APAGAR, DESENHAR, SAIR, TRIANGULO, LOSANGO, TRAPEZIO,
     
     //SubMenu
-    NOVO, EDITAR, MOSTRAR, VOLTAR      //listar, APAGAR
+    NOVO, EDITAR, MOSTRAR      //listar, APAGAR, voltar
     
 }
