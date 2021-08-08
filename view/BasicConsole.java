@@ -127,10 +127,11 @@ public class BasicConsole {
         
         switch (opcao) {
             case 1:
-                return askOpcaoMenuSecundario();
+                return askOpcaoMenuSecundarioQuadrado();
                 //return OpcoesMenuEnum.QUADRADO;
             case 2:
-                return OpcoesMenuEnum.RETANGULO;
+                return askOpcaoMenuSecundarioRetangulo();
+                //return OpcoesMenuEnum.RETANGULO;
             case 3:
                 return OpcoesMenuEnum.TRIANGULO;
             case 4:
@@ -140,22 +141,23 @@ public class BasicConsole {
             case 6:
                 return OpcoesMenuEnum.TRAPEZIO; 
             case 7:
-                return OpcoesMenuEnum.APAGAR;
+                return OpcoesMenuEnum.APAGAR;   //apagar
             case 8:
-                return OpcoesMenuEnum.DESENHAR;  //
+                return OpcoesMenuEnum.DESENHAR;  // desenhar
             case 9:
-                return OpcoesMenuEnum.LISTAR;   //
+                return OpcoesMenuEnum.LISTAR;   // listar
             default:
-                return OpcoesMenuEnum.SAIR;  //
+                return OpcoesMenuEnum.SAIR;  // sair
         }
     }
     
     //====================SUB-MENU===================================
+    //QUADRADO
     
-    public OpcoesMenuEnum askOpcaoMenuSecundario(){
+    public OpcoesMenuEnum askOpcaoMenuSecundarioQuadrado(){
         showMsg("\n\nDigite uma opção \n"
                 + "1 - Novo \n"
-                + "2 - Editar\n"
+                + "2 - Editar\n"  
                 + "3 - Listar\n"
                 + "4 - Mostrar\n"
                 + "5 - Apagar\n"
@@ -166,6 +168,38 @@ public class BasicConsole {
         switch(opcao1) {
             case 1:
                 return OpcoesMenuEnum.QUADRADO;
+            case 2:
+                return OpcoesMenuEnum.EDITAR;
+            case 3:
+                return OpcoesMenuEnum.LISTAR;  //
+            case 4:
+                return OpcoesMenuEnum.MOSTRAR;
+            case 5:
+                return OpcoesMenuEnum.APAGAR; //
+            case 6: 
+                return askOpcaoMenuPrincial();  //ok voltar
+                //return OpcoesMenuEnum.VOLTAR; 
+            default:
+                return OpcoesMenuEnum.SAIR;  // ok sair
+        }
+    }
+    
+    //RETANGULO ===============================================
+    
+    public OpcoesMenuEnum askOpcaoMenuSecundarioRetangulo(){
+        showMsg("\n\nDigite uma opção \n"
+                + "1 - Novo \n"
+                + "2 - Editar\n"  
+                + "3 - Listar\n"
+                + "4 - Mostrar\n"
+                + "5 - Apagar\n"
+                + "6 - Voltar\n");
+        
+        int opcao1 = in.nextInt();
+        
+        switch(opcao1) {
+            case 1:
+                return OpcoesMenuEnum.RETANGULO;
             case 2:
                 return OpcoesMenuEnum.EDITAR;
             case 3:
