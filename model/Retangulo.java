@@ -1,5 +1,7 @@
 package pc2.lab.aula09.projetoFigGeometricaLucas.model;
 
+import pc2.lab.aula09.projetoFigGeometricaLucas.model.enums.OpcoesMenuEnum;
+
 public class Retangulo extends Quadrilatero{
 
     public Retangulo() {
@@ -64,4 +66,5 @@ public class Retangulo extends Quadrilatero{
                 "\nPerimetro: " + getPerimetroRetangulo() + 
                 "\n Area: " + getAreaRetangulo();
     }
+
 }

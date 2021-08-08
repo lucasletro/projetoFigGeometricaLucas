@@ -5,6 +5,7 @@ import pc2.lab.aula09.projetoFigGeometricaLucas.model.Quadrado;
 
 import java.util.Scanner;
 import pc2.lab.aula09.projetoFigGeometricaLucas.model.Circulo;
+import pc2.lab.aula09.projetoFigGeometricaLucas.model.FiguraGeometrica;
 import pc2.lab.aula09.projetoFigGeometricaLucas.model.Losango;
 import pc2.lab.aula09.projetoFigGeometricaLucas.model.Retangulo;
 import pc2.lab.aula09.projetoFigGeometricaLucas.model.Trapezio;
@@ -31,13 +32,37 @@ public class BasicConsole {
         return in.nextInt();
     }
 
-    public Quadrado askQuadrado() {
-        showLnMsg("Digite um inteiro para o tamanho do lado do quadrado: ");
-        int tamanho = in.nextInt();
-        Quadrado quad = new Quadrado(tamanho);
+    public int showSubMenu() {
+        showMsg("\n\nDigite uma opção \n"
+                + "1 - Novo \n"
+                + "2 - Editar\n"
+                + "3 - Listar\n"
+                + "4 - Mostrar\n"
+                + "5 - Apagar\n"
+                + "6 - Voltar\n");
 
-        return quad;
+        int opcao1 = in.nextInt();
+        return opcao1;
+//        switch (opcao1) {
+//            case 1:
+//                return figura.novo(); //OpcoesMenuEnum.QUADRADO;
+//            case 2:
+//               // return figura.editar();
+//            case 3:
+//                return OpcoesMenuEnum.LISTAR;  //
+//            case 4:
+//                return OpcoesMenuEnum.MOSTRAR;
+//            case 5:
+//                return OpcoesMenuEnum.APAGAR; //
+//            case 6:
+//                return askOpcaoMenuPrincial();  //ok voltar
+//            //return OpcoesMenuEnum.VOLTAR;
+//            default:
+//                return OpcoesMenuEnum.SAIR;  // ok sair
+//        }
     }
+
+   
 
     public Retangulo askRetangulo() {
         showLnMsg("Digite a base do retangulo");
@@ -84,7 +109,7 @@ public class BasicConsole {
         return cir;
     }
 
-    public Trapezio askTrapezio() {  
+    public Trapezio askTrapezio() {
         showLnMsg("Digite um valor para a base maior do trapezio: ");
         int baseMaior = in.nextInt();
 
@@ -117,54 +142,55 @@ public class BasicConsole {
                 + "3 - Criar Triangulo\n"
                 + "4 - Criar Losango\n"
                 + "5 - Criar Circulo\n"
-                + "6 - Criar Trapezio\n" 
+                + "6 - Criar Trapezio\n"
                 + "7 - Apagar Item\n"
                 + "8 - Desenhar\n"
                 + "9 - Listar\n"
                 + "0 - Sair\n");
 
-        int opcao = in.nextInt();
-        
+        String opcao = in.next();
+
         switch (opcao) {
-            case 1:
-                return askOpcaoMenuSecundarioQuadrado();
-                //return OpcoesMenuEnum.QUADRADO;
-            case 2:
-                return askOpcaoMenuSecundarioRetangulo();
-                //return OpcoesMenuEnum.RETANGULO;
-            case 3:
+            case "1":
+                //return SubMenu//askOpcaoMenuSecundarioQuadrado();
+                return OpcoesMenuEnum.QUADRADO;
+            case "2":
+                //return askOpcaoMenuSecundarioRetangulo();
+                return OpcoesMenuEnum.RETANGULO;
+            case "3":
                 return OpcoesMenuEnum.TRIANGULO;
-            case 4:
+            case "4":
                 return OpcoesMenuEnum.LOSANGO;
-            case 5:
+            case "5":
                 return OpcoesMenuEnum.CIRCULO;
-            case 6:
-                return OpcoesMenuEnum.TRAPEZIO; 
-            case 7:
+            case "6":
+                return OpcoesMenuEnum.TRAPEZIO;
+            case "7":
                 return OpcoesMenuEnum.APAGAR;   //apagar
-            case 8:
+            case "d":
+            case "D":
                 return OpcoesMenuEnum.DESENHAR;  // desenhar
-            case 9:
+            case "L":
+            case "l":
                 return OpcoesMenuEnum.LISTAR;   // listar
             default:
                 return OpcoesMenuEnum.SAIR;  // sair
         }
     }
-    
+
     //====================SUB-MENU===================================
     //QUADRADO
-    
-    public OpcoesMenuEnum askOpcaoMenuSecundarioQuadrado(){
+    /*public OpcoesMenuEnum askOpcaoMenuSecundarioQuadrado(){
         showMsg("\n\nDigite uma opção \n"
                 + "1 - Novo \n"
-                + "2 - Editar\n"  
+                + "2 - Editar\n"
                 + "3 - Listar\n"
                 + "4 - Mostrar\n"
                 + "5 - Apagar\n"
                 + "6 - Voltar\n");
-        
+
         int opcao1 = in.nextInt();
-        
+
         switch(opcao1) {
             case 1:
                 return OpcoesMenuEnum.QUADRADO;
@@ -176,27 +202,27 @@ public class BasicConsole {
                 return OpcoesMenuEnum.MOSTRAR;
             case 5:
                 return OpcoesMenuEnum.APAGAR; //
-            case 6: 
+            case 6:
                 return askOpcaoMenuPrincial();  //ok voltar
-                //return OpcoesMenuEnum.VOLTAR; 
+                //return OpcoesMenuEnum.VOLTAR;
             default:
                 return OpcoesMenuEnum.SAIR;  // ok sair
         }
     }
-    
+
     //RETANGULO ===============================================
-    
+
     public OpcoesMenuEnum askOpcaoMenuSecundarioRetangulo(){
         showMsg("\n\nDigite uma opção \n"
                 + "1 - Novo \n"
-                + "2 - Editar\n"  
+                + "2 - Editar\n"
                 + "3 - Listar\n"
                 + "4 - Mostrar\n"
                 + "5 - Apagar\n"
                 + "6 - Voltar\n");
-        
+
         int opcao1 = in.nextInt();
-        
+
         switch(opcao1) {
             case 1:
                 return OpcoesMenuEnum.RETANGULO;
@@ -208,13 +234,11 @@ public class BasicConsole {
                 return OpcoesMenuEnum.MOSTRAR;
             case 5:
                 return OpcoesMenuEnum.APAGAR; //
-            case 6: 
+            case 6:
                 return askOpcaoMenuPrincial();  //ok voltar
-                //return OpcoesMenuEnum.VOLTAR; 
+                //return OpcoesMenuEnum.VOLTAR;
             default:
                 return OpcoesMenuEnum.SAIR;  // ok sair
         }
-    }
-    
-
+    }*/
 }
