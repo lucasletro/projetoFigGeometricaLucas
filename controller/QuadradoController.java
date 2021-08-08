@@ -18,31 +18,39 @@ public class QuadradoController extends AlessioPaint {
 
     public void showQuadradoMenu() {
         QuadradoConsole quadradoConsole = new QuadradoConsole();
-        int option = quadradoConsole.showQuadradoSubMenu();
+        int option = 0;
+        do {
+            option = quadradoConsole.showQuadradoSubMenu();
 
-        switch (option) {
-            case 1:
-                Quadrado quad = quadradoConsole.askQuadrado();
-                super.insertFiguraGeometrica(quad);
-                break;
-            case 2:
-                quadradoConsole.editarQuadrado();
-                break;
-            case 3:
-                //listar
-                ArrayList<FiguraGeometrica> arrayFig = super.getListaFiguraGeometrica();
-                quadradoConsole.listarQuadrado(arrayFig);
-                break;
-            case 4:
-                //mostrar
-                break;
-            case 5:
-                //apagar
+            switch (option) {
+                case 1:
+                    Quadrado quad = quadradoConsole.askQuadrado();
+                    super.insertFiguraGeometrica(quad);
+                    break;
+                case 2:
+                    ArrayList<FiguraGeometrica> arrayFig = super.getListaFiguraGeometrica();
+                    
+                    boolean isSaved = quadradoConsole.editarQuadrado(arrayFig);
+                    if (isSaved) {
+                        quadradoConsole.showLnMsg("Editado com sucesso!");
+                    }
+                    break;
+                case 3:
+                    //listar
+                    arrayFig = super.getListaFiguraGeometrica();
+                    quadradoConsole.listarQuadrado(arrayFig);
+                    break;
+                case 4:
+                    //mostrar
+                    break;
+                case 5:
+                    //apagar
 
-                break;
-            default:
-                // super.askOpcaoMenuPrincial();
-                break;
-        }
+                    break;
+                default:
+                    // super.askOpcaoMenuPrincial();
+                    break;
+            }
+        } while (option < 6);
     }
 }
