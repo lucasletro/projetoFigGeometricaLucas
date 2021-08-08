@@ -16,9 +16,23 @@ import pc2.lab.aula09.projetoFigGeometricaLucas.view.QuadradoConsole;
  */
 public class QuadradoController extends AlessioPaint {
 
+    public String getIndicesDosQuadrados() {
+        ArrayList<FiguraGeometrica> lista = super.getListaFiguraGeometrica();
+        String indexes = "";
+        for (int i = 0; i < lista.size(); i++) {
+            if (lista.get(i) instanceof Quadrado) {
+                indexes = indexes + ", " + String.valueOf(i);
+                //showLnMsg("Index do quadrado:" + i);
+            }
+        }
+        return indexes;
+    }
+
     public void showQuadradoMenu() {
         QuadradoConsole quadradoConsole = new QuadradoConsole();
         int option = 0;
+        String indices;
+        ArrayList<FiguraGeometrica> arrayFig;
         do {
             option = quadradoConsole.showQuadradoSubMenu();
 
@@ -28,12 +42,23 @@ public class QuadradoController extends AlessioPaint {
                     super.insertFiguraGeometrica(quad);
                     break;
                 case 2:
-                    ArrayList<FiguraGeometrica> arrayFig = super.getListaFiguraGeometrica();
-                    
-                    boolean isSaved = quadradoConsole.editarQuadrado(arrayFig);
-                    if (isSaved) {
-                        quadradoConsole.showLnMsg("Editado com sucesso!");
+                    //EDITAR
+                    indices = getIndicesDosQuadrados();
+                    if ("".equals(indices)) {
+                        quadradoConsole.showLnMsg("Nao existe a figura na lista. ");
+                    } else {
+
+                        int index = quadradoConsole.askInt("Digite o index que deseja editar:  " + indices);
+                        if (indices.contains(String.valueOf(index))) {
+                            quad = quadradoConsole.askQuadrado();
+                            super.setNewValueToList(quad, index);
+                        } else {
+                            quadradoConsole.showLnMsg("Este indice é invalido.");
+                        }
+
+                        //quad = (Quadrado) super.getFiguraIndiceLista(indices);
                     }
+
                     break;
                 case 3:
                     //listar
@@ -42,13 +67,37 @@ public class QuadradoController extends AlessioPaint {
                     break;
                 case 4:
                     //mostrar
+
+                    indices = getIndicesDosQuadrados();
+                    if ("".equals(indices)) {
+                        quadradoConsole.showLnMsg("Nao existe a figura na lista. ");
+                        //return;
+                    } else {
+                        int indice = quadradoConsole.askInt("Digite o indice que deseja mostrar: " + indices);
+                        if (indices.contains(String.valueOf(indice))) {
+                            super.mostrarIndice(indice);
+                        } else {
+                            quadradoConsole.showLnMsg("Este indice é invalido.");
+                        }
+
+                    }
+
+                    //arrayFig = super.getListaFiguraGeometrica();
+                    //quadrado console perguntar qual indice desejado (parametro indices)
+                    //super.listarindice toString()
                     break;
                 case 5:
                     //apagar
-
+                    indices = getIndicesDosQuadrados();
+                    if ("".equals(indices)) {
+                        quadradoConsole.showLnMsg("Nao existe a figura na lista. ");
+                    } else {
+                        int index = quadradoConsole.askInt("Digite o index que deseja excluir:  " + indices);
+                        super.excluirIndexDaLista(index);
+                    }
                     break;
                 default:
-                    // super.askOpcaoMenuPrincial();
+                    super.mostrarMenu();
                     break;
             }
         } while (option < 6);

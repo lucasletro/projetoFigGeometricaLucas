@@ -14,35 +14,8 @@ public class QuadradoConsole extends BasicConsole {
         return quad;
     }
     
-    public boolean editarQuadrado(ArrayList<FiguraGeometrica> lista) {
-        showLnMsg("------ EDITAR QUADRADO -----");
-        String indexes = "";
-        for (int i = 0; i < lista.size(); i++) {
-            if (lista.get(i) instanceof Quadrado) {
-                indexes = indexes + ", " + String.valueOf(i);
-                //showLnMsg("Index do quadrado:" + i);
-            }
-        }
-        if ("".equals(indexes)) {
-            showLnMsg("Nao existe quadrado na lista de figuras. ");
-            return false;
-        } else {
-            int index = askInt("Digite o index do quadrado que deseja editar: " + indexes);
-            if (indexes.contains(String.valueOf(index))) {
-                Quadrado q = (Quadrado) lista.get(index);
-                int tamanhoNovo = askInt("Digite o novo tamanho do lado do quadrado: ");
-                q.setTamanho(tamanhoNovo);
-                lista.set(index, q);
-                return true;
-                //return (Quadrado) lista.get(index);
-            } else {
-                showLnMsg("Index Invalido");
-                return false;
-            }
-            
-        }
-        
-    }
+  
+
     
     public void listarQuadrado(ArrayList<FiguraGeometrica> lista) {
         showLnMsg("------ LISTAR QUADRADO -----");
