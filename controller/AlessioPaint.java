@@ -51,8 +51,10 @@ public class AlessioPaint {
                 //insertFiguraGeometrica(tri);
                 break;
             case LOSANGO:
-                Losango los = tela.askLosango();
-                insertFiguraGeometrica(los);
+                LosangoController losangoController = new LosangoController();
+                losangoController.showLosangoMenu();
+                //Losango los = tela.askLosango();
+                //insertFiguraGeometrica(los);
                 break;
             case CIRCULO:
                 Circulo cir = tela.askCirculo();

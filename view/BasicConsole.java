@@ -68,19 +68,7 @@ public class BasicConsole {
 
     
 
-    public Losango askLosango() {
-        showLnMsg("Digite a diagonal inferior do losango: ");
-        int diagonalInferior = in.nextInt();
-        //requisição de altura
-        showLnMsg("Digite a diagonal superior do losango: ");
-        int diagonalSuperior = in.nextInt();
-
-        showLnMsg("Digite o tamanho do lado do losango: ");
-        int tamanhoLado = in.nextInt();
-
-        Losango los = new Losango(diagonalInferior, diagonalSuperior, tamanhoLado);
-        return los;
-    }
+    
 
     public Circulo askCirculo() {
         showLnMsg("Digite um valor para o raio do circulo: ");
@@ -117,7 +105,7 @@ public class BasicConsole {
     public OpcoesMenuEnum askOpcaoMenuPrincial() {
         //Loop para entregar uma opção valida
         showMsg("\nDigite uma opção \n"
-                + "1 - Criar Quadrado\n"
+                + "1 - Criar Quadrado\n"  
                 + "2 - Criar Retangulo\n"
                 + "3 - Criar Triangulo\n"
                 + "4 - Criar Losango\n"
