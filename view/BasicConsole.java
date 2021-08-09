@@ -70,12 +70,7 @@ public class BasicConsole {
 
     
 
-    public Circulo askCirculo() {
-        showLnMsg("Digite um valor para o raio do circulo: ");
-        int raio = in.nextInt();
-        Circulo cir = new Circulo(raio);
-        return cir;
-    }
+    
 
     public Trapezio askTrapezio() {
         showLnMsg("Digite um valor para a base maior do trapezio: ");

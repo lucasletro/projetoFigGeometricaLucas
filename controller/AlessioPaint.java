@@ -57,8 +57,10 @@ public class AlessioPaint {
                 //insertFiguraGeometrica(los);
                 break;
             case CIRCULO:
-                Circulo cir = tela.askCirculo();
-                insertFiguraGeometrica(cir);
+                CirculoController circuloController = new CirculoController();
+                circuloController.showCirculoMenu();
+                //Circulo cir = tela.askCirculo();
+                //insertFiguraGeometrica(cir);
                 break;
             case TRAPEZIO:
                 Trapezio trap = tela.askTrapezio();
