@@ -79,10 +79,10 @@ public class Triangulo extends FiguraGeometrica {
 
     @Override
     public String toString() {
-        return "\n\nTriangulo: " + "\nBase: " + inferiorDireito.getX() +
-                "\nAltura: " + superior.getY() +
-                "\nPerimetro: " + getPerimetroTriangulo() + 
-                "\n Area: " + getAreaTriangulo();
+        return "\nTriangulo: " + "\nBase: " + inferiorDireito.getX() +
+                " Altura: " + superior.getY() +
+                " Perimetro: " + getPerimetroTriangulo() + 
+                " Area: " + getAreaTriangulo();
     }
     
 }

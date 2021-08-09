@@ -45,8 +45,10 @@ public class AlessioPaint {
                 //insertFiguraGeometrica(ret);
                 break;
             case TRIANGULO:
-                Triangulo tri = tela.askTriangulo();
-                insertFiguraGeometrica(tri);
+                TrianguloController trianguloController = new TrianguloController();
+                trianguloController.showTrianguloMenu();
+                //Triangulo tri = tela.askTriangulo();
+                //insertFiguraGeometrica(tri);
                 break;
             case LOSANGO:
                 Losango los = tela.askLosango();

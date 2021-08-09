@@ -66,17 +66,7 @@ public class BasicConsole {
 
     
 
-    public Triangulo askTriangulo() {
-        showLnMsg("Digite a base do Triangulo: ");
-        int base = in.nextInt();
-        //requisição de altura
-        showLnMsg("Digite a altura do Triangulo: ");
-        int altura = in.nextInt();
-
-        Triangulo tri = new Triangulo(base, altura);
-
-        return tri;
-    }
+    
 
     public Losango askLosango() {
         showLnMsg("Digite a diagonal inferior do losango: ");
@@ -136,7 +126,7 @@ public class BasicConsole {
                 + "7 - Apagar Item\n"
                 + "D - Desenhar\n"
                 + "L - Listar\n"
-                + "0 - Sair\n");
+                + "X - Sair\n");
 
         String opcao = in.next();
 
