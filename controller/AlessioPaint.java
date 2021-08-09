@@ -39,8 +39,10 @@ public class AlessioPaint {
                 //insertFiguraGeometrica(quad);
                 break;
             case RETANGULO:
-                Retangulo ret = tela.askRetangulo();
-                insertFiguraGeometrica(ret);
+                RetanguloController retanguloController = new RetanguloController();
+                retanguloController.showRetanguloMenu();
+                //Retangulo ret = tela.askRetangulo();
+                //insertFiguraGeometrica(ret);
                 break;
             case TRIANGULO:
                 Triangulo tri = tela.askTriangulo();

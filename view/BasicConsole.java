@@ -64,17 +64,7 @@ public class BasicConsole {
 
    
 
-    public Retangulo askRetangulo() {
-        showLnMsg("Digite a base do retangulo");
-        int base = in.nextInt();
-        //requisição de altura
-        showLnMsg("Digite a altura do retangulo");
-        int altura = in.nextInt();
-
-        Retangulo ret = new Retangulo(base, altura);
-
-        return ret;
-    }
+    
 
     public Triangulo askTriangulo() {
         showLnMsg("Digite a base do Triangulo: ");
@@ -144,8 +134,8 @@ public class BasicConsole {
                 + "5 - Criar Circulo\n"
                 + "6 - Criar Trapezio\n"
                 + "7 - Apagar Item\n"
-                + "8 - Desenhar\n"
-                + "9 - Listar\n"
+                + "D - Desenhar\n"
+                + "L - Listar\n"
                 + "0 - Sair\n");
 
         String opcao = in.next();
