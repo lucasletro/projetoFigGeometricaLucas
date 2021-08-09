@@ -63,8 +63,10 @@ public class AlessioPaint {
                 //insertFiguraGeometrica(cir);
                 break;
             case TRAPEZIO:
-                Trapezio trap = tela.askTrapezio();
-                insertFiguraGeometrica(trap);
+                TrapezioController trapezioController = new TrapezioController();
+                trapezioController.showTrapezioMenu();
+                //Trapezio trap = tela.askTrapezio();
+                //insertFiguraGeometrica(trap);
                 break;
             case LISTAR:
                 //Retangulo retangulo = new Retangulo();

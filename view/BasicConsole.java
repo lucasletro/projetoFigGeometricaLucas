@@ -62,32 +62,7 @@ public class BasicConsole {
 //        }
     }
 
-   
-
     
-
-    
-
-    
-
-    
-
-    public Trapezio askTrapezio() {
-        showLnMsg("Digite um valor para a base maior do trapezio: ");
-        int baseMaior = in.nextInt();
-
-        showLnMsg("Digite um valor para a base menor do trapezio: ");
-        int baseMenor = in.nextInt();
-
-        showLnMsg("Digite um valor para a altura do trapezio: ");
-        int altura = in.nextInt();
-
-        showLnMsg("Digite um valor para o lado do trapezio: ");
-        int lado = in.nextInt();
-
-        Trapezio trap = new Trapezio(baseMaior, baseMenor, altura, lado);
-        return trap;
-    }
 
     public int askInt() {
         return in.nextInt();
