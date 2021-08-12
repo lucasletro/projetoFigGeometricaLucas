@@ -13,7 +13,7 @@ import pc2.lab.aula09.projetoFigGeometricaLucas.model.enums.OpcoesMenuEnum;
  */
 public class SubMenu extends BasicConsole {
     
-    public OpcoesMenuEnum returnSelectedOption(){
+    /*public OpcoesMenuEnum returnSelectedOption(){
         showMsg("\n\nDigite uma opção \n"
                 + "1 - Novo \n"
                 + "2 - Editar\n"  
@@ -41,7 +41,7 @@ public class SubMenu extends BasicConsole {
             default:
                 return OpcoesMenuEnum.SAIR;  // ok sair
         }
-    }
+    }*/
     
     
 }

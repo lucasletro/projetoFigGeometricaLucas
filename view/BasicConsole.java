@@ -81,19 +81,19 @@ public class BasicConsole {
                 + "4 - Criar Losango\n"
                 + "5 - Criar Circulo\n"
                 + "6 - Criar Trapezio\n"
-                + "7 - Apagar Item\n"
+                //+ "7 - Apagar Item\n"
                 + "D - Desenhar\n"
                 + "L - Listar\n"
+                + "S - Salvar\n"     //////////////
+                + "R - Recarregar\n" /////////////////
                 + "X - Sair\n");
 
         String opcao = in.next();
 
         switch (opcao) {
             case "1":
-                //return SubMenu//askOpcaoMenuSecundarioQuadrado();
                 return OpcoesMenuEnum.QUADRADO;
             case "2":
-                //return askOpcaoMenuSecundarioRetangulo();
                 return OpcoesMenuEnum.RETANGULO;
             case "3":
                 return OpcoesMenuEnum.TRIANGULO;
@@ -103,16 +103,22 @@ public class BasicConsole {
                 return OpcoesMenuEnum.CIRCULO;
             case "6":
                 return OpcoesMenuEnum.TRAPEZIO;
-            case "7":
-                return OpcoesMenuEnum.APAGAR;   //apagar
+            //case "7":
+                //return OpcoesMenuEnum.APAGAR;   
             case "d":
             case "D":
-                return OpcoesMenuEnum.DESENHAR;  // desenhar
+                return OpcoesMenuEnum.DESENHAR;  
             case "L":
             case "l":
-                return OpcoesMenuEnum.LISTAR;   // listar
+                return OpcoesMenuEnum.LISTAR;   
+            case "s":
+            case "S":
+                return OpcoesMenuEnum.SALVAR;   ////////////
+            case "r":
+            case "R":
+                return OpcoesMenuEnum.RECARREGAR; //////////////
             default:
-                return OpcoesMenuEnum.SAIR;  // sair
+                return OpcoesMenuEnum.SAIR;  
         }
     }
 

@@ -1,5 +1,8 @@
 package pc2.lab.aula09.projetoFigGeometricaLucas.controller;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import pc2.lab.aula09.projetoFigGeometricaLucas.model.*;
 import pc2.lab.aula09.projetoFigGeometricaLucas.model.enums.OpcoesMenuEnum;
 import pc2.lab.aula09.projetoFigGeometricaLucas.view.BasicConsole;
@@ -16,7 +19,7 @@ public class AlessioPaint {
     private DesenhoBoard canvas;
 
     public AlessioPaint() {
-        figuraGeometricaArrayList = new ArrayList<>();
+        figuraGeometricaArrayList = new ArrayList<FiguraGeometrica>();
         //vetor= new FiguraGeometrica[5];
         tela = new BasicConsole();
         canvas = new DesenhoBoard();
@@ -77,6 +80,9 @@ public class AlessioPaint {
                     }
                 }
                 break;
+            case SALVAR:
+                salvarFiguras(figuraGeometricaArrayList);
+                break;
             case APAGAR:
                 int index = tela.askInt("Digite um index para apagar: ");
                 if (index < figuraGeometricaArrayList.size()) {
@@ -103,6 +109,7 @@ public class AlessioPaint {
     public boolean insertFiguraGeometrica(FiguraGeometrica fig) {
         if (figuraGeometricaArrayList.size() < 10) {
             figuraGeometricaArrayList.add(fig);
+            System.out.println("Figura inserida");
             return true;
         } else {
             return false;
@@ -126,15 +133,39 @@ public class AlessioPaint {
         figuraGeometricaArrayList.set(index, figura);
 
     }
-    public void excluirIndexDaLista(int index){
+
+    public void excluirIndexDaLista(int index) {
         figuraGeometricaArrayList.remove(index);
         tela.showLnMsg("Indice excluido! ");
     }
-    
-    public void mostrarIndice(int index){    
-        
+
+    public void mostrarIndice(int index) {
+
         FiguraGeometrica fig = figuraGeometricaArrayList.get(index);
         tela.showLnMsg(fig.toString());
     }
-    
+
+    public void salvarFiguras(ArrayList<FiguraGeometrica> figuras) {
+        FileOutputStream arquivo = null;
+        FiguraGeometrica[] a = new FiguraGeometrica[figuras.size()];
+        for (int i = 0; i <= a.length; i++) {
+
+            if (figuras.get(i) != null) {
+                a[i] = figuras.get(i);
+            }
+        }
+        try {
+            arquivo = new FileOutputStream("figurasGeometricas.dat");
+            ObjectOutputStream out = new ObjectOutputStream(arquivo);
+            for (FiguraGeometrica i : figuras) {
+                out.writeObject(i);
+            }
+
+        } catch (IOException e) {
+            System.out.println("Erro ao salvar arquivo.");
+            e.printStackTrace();
+        }
+        System.out.println("Figuras geometricas salvas");
+    }
+
 }
