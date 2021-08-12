@@ -72,25 +72,13 @@ public class AlessioPaint {
                 //insertFiguraGeometrica(trap);
                 break;
             case LISTAR:
-                //Retangulo retangulo = new Retangulo();
-                //insertFiguraGeométrica(retangulo, 1);
-                for (int i = 0; i < figuraGeometricaArrayList.size(); i++) {
-                    if (figuraGeometricaArrayList.get(i) != null) {
-                        System.out.println(figuraGeometricaArrayList.get(i).toString());
-                    }
-                }
+                listar();
                 break;
             case SALVAR:
                 salvarFiguras(figuraGeometricaArrayList);
                 break;
             case APAGAR:
-                int index = tela.askInt("Digite um index para apagar: ");
-                if (index < figuraGeometricaArrayList.size()) {
-                    figuraGeometricaArrayList.remove(index);
-                    tela.showLnMsg("index " + index + " removido!");
-                } else {
-                    tela.showLnMsg("Index inexistente.");
-                }
+                apagarFiguras();
                 break;
 
             case DESENHAR:
@@ -147,25 +135,35 @@ public class AlessioPaint {
 
     public void salvarFiguras(ArrayList<FiguraGeometrica> figuras) {
         FileOutputStream arquivo = null;
-        FiguraGeometrica[] a = new FiguraGeometrica[figuras.size()];
-        for (int i = 0; i <= a.length; i++) {
-
-            if (figuras.get(i) != null) {
-                a[i] = figuras.get(i);
-            }
-        }
         try {
             arquivo = new FileOutputStream("figurasGeometricas.dat");
             ObjectOutputStream out = new ObjectOutputStream(arquivo);
-            for (FiguraGeometrica i : figuras) {
-                out.writeObject(i);
-            }
-
+            out.writeObject(figuras);
         } catch (IOException e) {
             System.out.println("Erro ao salvar arquivo.");
             e.printStackTrace();
         }
         System.out.println("Figuras geometricas salvas");
+    }
+
+    public void apagarFiguras() {
+        int index = tela.askInt("Digite um index para apagar: ");
+        if (index < figuraGeometricaArrayList.size()) {
+            figuraGeometricaArrayList.remove(index);
+            tela.showLnMsg("index " + index + " removido!");
+        } else {
+            tela.showLnMsg("Index inexistente.");
+        }
+    }
+
+    public void listar() {
+        //Retangulo retangulo = new Retangulo();
+        //insertFiguraGeométrica(retangulo, 1);
+        for (int i = 0; i < figuraGeometricaArrayList.size(); i++) {
+            if (figuraGeometricaArrayList.get(i) != null) {
+                System.out.println(figuraGeometricaArrayList.get(i).toString());
+            }
+        }
     }
 
 }
