@@ -14,7 +14,7 @@ import pc2.lab.aula09.projetoFigGeometricaLucas.model.Retangulo;
  * @author Lucas Letro
  */
 public class RetanguloConsole extends BasicConsole {
-    
+
     public Retangulo askRetangulo() {
         showLnMsg("Digite a base do retangulo");
         int base = in.nextInt();
@@ -26,22 +26,27 @@ public class RetanguloConsole extends BasicConsole {
 
         return ret;
     }
-    
+
     public void listarRetangulo(ArrayList<FiguraGeometrica> lista) {
-        showLnMsg("------ LISTAR RETANGULO -----");
-        for (int i = 0; i < lista.size(); i++) {
-            if (lista.get(i) instanceof Retangulo) {
-                showLnMsg(lista.get(i).toString());
+
+        if (lista.isEmpty()) {
+            showLnMsg("Nao existe a figura na lista. ");
+        } else {
+            showLnMsg("------ LISTAR RETANGULO -----");
+            for (int i = 0; i < lista.size(); i++) {
+                if (lista.get(i) instanceof Retangulo) {
+                    showLnMsg(lista.get(i).toString());
+                }
             }
         }
     }
-    
+
     public int ShowRetanguloSubMenu() {
         int option = 0;
-        
+
         option = super.showSubMenu();
         return option;
-        
+
     }
-    
+
 }

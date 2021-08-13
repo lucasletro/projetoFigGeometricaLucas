@@ -14,7 +14,7 @@ import pc2.lab.aula09.projetoFigGeometricaLucas.model.Trapezio;
  * @author Lucas Letro
  */
 public class TrapezioConsole extends BasicConsole {
-    
+
     public Trapezio askTrapezio() {
         showLnMsg("Digite um valor para a base maior do trapezio: ");
         int baseMaior = in.nextInt();
@@ -31,28 +31,27 @@ public class TrapezioConsole extends BasicConsole {
         Trapezio trap = new Trapezio(baseMaior, baseMenor, altura, lado);
         return trap;
     }
-    
-    
+
     public void listarTrapezio(ArrayList<FiguraGeometrica> lista) {
-        showLnMsg("------ LISTAR TRAPEZIO -----");
-        for (int i = 0; i < lista.size(); i++) {
-            if (lista.get(i) instanceof Trapezio) {
-                showLnMsg(lista.get(i).toString());
+
+        if (lista.isEmpty()) {
+            showLnMsg("Nao existe a figura na lista. ");
+        } else {
+            showLnMsg("------ LISTAR TRAPEZIO -----");
+            for (int i = 0; i < lista.size(); i++) {
+                if (lista.get(i) instanceof Trapezio) {
+                    showLnMsg(lista.get(i).toString());
+                }
             }
         }
     }
-    
-    
+
     public int ShowTrapezioSubMenu() {
         int option = 0;
-        
+
         option = super.showSubMenu();
         return option;
-        
+
     }
-    
-    
-    
-    
-    
+
 }

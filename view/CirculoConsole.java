@@ -14,34 +14,34 @@ import pc2.lab.aula09.projetoFigGeometricaLucas.model.FiguraGeometrica;
  * @author Lucas Letro
  */
 public class CirculoConsole extends BasicConsole {
-    
+
     public Circulo askCirculo() {
         showLnMsg("Digite um valor para o raio do circulo: ");
         int raio = in.nextInt();
         Circulo cir = new Circulo(raio);
         return cir;
     }
-    
+
     public void listarCirculo(ArrayList<FiguraGeometrica> lista) {
-        showLnMsg("------ LISTAR CIRCULO -----");
-        for (int i = 0; i < lista.size(); i++) {
-            if (lista.get(i) instanceof Circulo) {
-                showLnMsg(lista.get(i).toString());
+        if (lista.isEmpty()) {
+            showLnMsg("Nao existe a figura na lista. ");
+        } else {
+            showLnMsg("------ LISTAR CIRCULO -----");
+            for (int i = 0; i < lista.size(); i++) {
+                if (lista.get(i) instanceof Circulo) {
+                    showLnMsg(lista.get(i).toString());
+                }
             }
         }
+
     }
-    
-    
+
     public int ShowCirculoSubMenu() {
         int option = 0;
-        
+
         option = super.showSubMenu();
         return option;
-        
+
     }
-    
-    
-    
-    
-    
+
 }

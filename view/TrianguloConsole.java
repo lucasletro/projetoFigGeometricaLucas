@@ -14,7 +14,7 @@ import pc2.lab.aula09.projetoFigGeometricaLucas.model.Triangulo;
  * @author Lucas Letro
  */
 public class TrianguloConsole extends BasicConsole {
-    
+
     public Triangulo askTriangulo() {
         showLnMsg("Digite a base do Triangulo: ");
         int base = in.nextInt();
@@ -26,25 +26,27 @@ public class TrianguloConsole extends BasicConsole {
 
         return tri;
     }
-    
+
     public void listarTriangulo(ArrayList<FiguraGeometrica> lista) {
-        showLnMsg("------ LISTAR TRIANGULO -----");
-        for (int i = 0; i < lista.size(); i++) {
-            if (lista.get(i) instanceof Triangulo) {
-                showLnMsg(lista.get(i).toString());
+
+        if (lista.isEmpty()) {
+            showLnMsg("Nao existe a figura na lista. ");
+        } else {
+            showLnMsg("------ LISTAR TRIANGULO -----");
+            for (int i = 0; i < lista.size(); i++) {
+                if (lista.get(i) instanceof Triangulo) {
+                    showLnMsg(lista.get(i).toString());
+                }
             }
         }
     }
-    
-    
+
     public int ShowTrianguloSubMenu() {
         int option = 0;
-        
+
         option = super.showSubMenu();
         return option;
-        
+
     }
-    
-    
-    
+
 }
