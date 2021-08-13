@@ -15,7 +15,7 @@ import pc2.lab.aula09.projetoFigGeometricaLucas.view.QuadradoConsole;
  * @author Lucas Letro
  */
 public class QuadradoController extends AlessioPaint {
-
+    
     public String getIndicesDosQuadrados() {
         ArrayList<FiguraGeometrica> lista = super.getListaFiguraGeometrica();
         String indexes = "";

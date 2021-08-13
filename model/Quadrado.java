@@ -2,7 +2,7 @@ package pc2.lab.aula09.projetoFigGeometricaLucas.model;
 
 import pc2.lab.aula09.projetoFigGeometricaLucas.model.enums.OpcoesMenuEnum;
 
-public class Quadrado extends Retangulo {
+public class Quadrado extends Retangulo  {
 
     private int tamanhoLado;
 

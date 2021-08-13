@@ -1,6 +1,7 @@
 package pc2.lab.aula09.projetoFigGeometricaLucas.controller;
 
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import pc2.lab.aula09.projetoFigGeometricaLucas.model.*;
@@ -14,13 +15,16 @@ import pc2.lab.aula09.projetoFigGeometricaLucas.view.QuadradoConsole;
 public class AlessioPaint {
 
     //private FiguraGeometrica[] vetor;
-    private ArrayList<FiguraGeometrica> figuraGeometricaArrayList;
+    private static ArrayList<FiguraGeometrica> figuraGeometricaArrayList;
+    private FiguraGeometrica[] figuraSalvar = new FiguraGeometrica[10];
+    private int contador;
     private BasicConsole tela;
     private DesenhoBoard canvas;
 
     public AlessioPaint() {
-        figuraGeometricaArrayList = new ArrayList<FiguraGeometrica>();
         //vetor= new FiguraGeometrica[5];
+        figuraGeometricaArrayList = new ArrayList<FiguraGeometrica>();
+        contador = 0;
         tela = new BasicConsole();
         canvas = new DesenhoBoard();
     }
@@ -94,8 +98,15 @@ public class AlessioPaint {
     }
 
     public boolean insertFiguraGeometrica(FiguraGeometrica fig) {
-        if (figuraGeometricaArrayList.size() < 10) {
-            figuraGeometricaArrayList.add(fig);
+        if (contador < 10) {
+            figuraGeometricaArrayList.add(contador, fig);
+            figuraSalvar[contador] = fig;
+            for(int i = 0; i <= contador; i++){
+                System.out.println(figuraSalvar[i].toString());
+                System.out.println(i);
+            }
+            contador+=1;
+            
             System.out.println("Figura inserida");
             return true;
         } else {
@@ -133,16 +144,23 @@ public class AlessioPaint {
     }
 
     public void salvarFiguras(ArrayList<FiguraGeometrica> figuras) {
-        FileOutputStream arquivo = null;
         try {
-            arquivo = new FileOutputStream("figurasGeometricas.dat");
-            ObjectOutputStream out = new ObjectOutputStream(arquivo);
-            out.writeObject(figuras);
+            FileWriter writer = new FileWriter("C:\\Users\\Lucas Letro\\Desktop\\salvar\\figuras.txt");
+            String texto = "";
+            for (int i = 0; i < 10; i++) {
+                if (figuraSalvar[i] != null) {
+                    
+                    texto += figuraSalvar[i].toString() + "\n";
+                }
+            }
+            writer.write(texto);
+            writer.close();
+            System.out.println("Figuras geometricas salvas");
         } catch (IOException e) {
             System.out.println("Erro ao salvar arquivo.");
             e.printStackTrace();
         }
-        System.out.println("Figuras geometricas salvas");
+
     }
 
     public void apagarFiguras() {
@@ -151,7 +169,7 @@ public class AlessioPaint {
             figuraGeometricaArrayList.remove(index);
             tela.showLnMsg("index " + index + " removido!");
         } else {
-            
+
             tela.showLnMsg("Index inexistente.");
         }
     }
