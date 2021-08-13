@@ -17,7 +17,7 @@ import pc2.lab.aula09.projetoFigGeometricaLucas.view.CirculoConsole;
  * @author Lucas Letro
  */
 public class CirculoController extends AlessioPaint {
-    
+
     public String getIndicesDosCirculos() {
         ArrayList<FiguraGeometrica> lista = super.getListaFiguraGeometrica();
         String indexes = "";
@@ -29,7 +29,7 @@ public class CirculoController extends AlessioPaint {
         }
         return indexes;
     }
-    
+
     public void showCirculoMenu() {
         CirculoConsole circuloConsole = new CirculoConsole();
         int option = 0;
@@ -94,22 +94,24 @@ public class CirculoController extends AlessioPaint {
                     if ("".equals(indices)) {
                         circuloConsole.showLnMsg("Nao existe a figura na lista. ");
                     } else {
-                        int index = circuloConsole.askInt("Digite o index que deseja excluir:  " + indices);
-                        super.excluirIndexDaLista(index);
+
+                        int index = circuloConsole.askInt("Digite o index que deseja apagar:  " + indices);
+                        if (indices.contains(String.valueOf(index))) {
+                            super.excluirIndexDaLista(index);
+                        } else {
+                            circuloConsole.showLnMsg("Este indice é invalido.");
+                        }
+
+                        //quad = (Quadrado) super.getFiguraIndiceLista(indices);
                     }
+
                     break;
+
                 default:
                     super.mostrarMenu();
                     break;
             }
         } while (option < 6);
     }
-    
-    
-    
-    
-    
-    
-    
-    
+
 }

@@ -93,8 +93,15 @@ public class RetanguloController extends AlessioPaint {
                     if ("".equals(indices)) {
                         retanguloConsole.showLnMsg("Nao existe a figura na lista. ");
                     } else {
-                        int index = retanguloConsole.askInt("Digite o index que deseja excluir:  " + indices);
-                        super.excluirIndexDaLista(index);
+
+                        int index = retanguloConsole.askInt("Digite o index que deseja apagar:  " + indices);
+                        if (indices.contains(String.valueOf(index))) {
+                            super.excluirIndexDaLista(index);
+                        } else {
+                            retanguloConsole.showLnMsg("Este indice é invalido.");
+                        }
+
+                        //quad = (Quadrado) super.getFiguraIndiceLista(indices);
                     }
                     break;
                 default:

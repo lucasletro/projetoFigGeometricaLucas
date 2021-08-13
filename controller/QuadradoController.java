@@ -92,8 +92,15 @@ public class QuadradoController extends AlessioPaint {
                     if ("".equals(indices)) {
                         quadradoConsole.showLnMsg("Nao existe a figura na lista. ");
                     } else {
-                        int index = quadradoConsole.askInt("Digite o index que deseja excluir:  " + indices);
-                        super.excluirIndexDaLista(index);
+
+                        int index = quadradoConsole.askInt("Digite o index que deseja apagar:  " + indices);
+                        if (indices.contains(String.valueOf(index))) {
+                            super.excluirIndexDaLista(index);
+                        } else {
+                            quadradoConsole.showLnMsg("Este indice é invalido.");
+                        }
+
+                        //quad = (Quadrado) super.getFiguraIndiceLista(indices);
                     }
                     break;
                 default:

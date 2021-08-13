@@ -80,7 +80,6 @@ public class AlessioPaint {
             case APAGAR:
                 apagarFiguras();
                 break;
-
             case DESENHAR:
                 //canvas.desenhar(vetor);
                 break;
@@ -152,6 +151,7 @@ public class AlessioPaint {
             figuraGeometricaArrayList.remove(index);
             tela.showLnMsg("index " + index + " removido!");
         } else {
+            
             tela.showLnMsg("Index inexistente.");
         }
     }

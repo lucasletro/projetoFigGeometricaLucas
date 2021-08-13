@@ -17,7 +17,7 @@ import pc2.lab.aula09.projetoFigGeometricaLucas.view.TrianguloConsole;
  * @author Lucas Letro
  */
 public class TrianguloController extends AlessioPaint {
-    
+
     public String getIndicesDosTriangulos() {
         ArrayList<FiguraGeometrica> lista = super.getListaFiguraGeometrica();
         String indexes = "";
@@ -29,8 +29,7 @@ public class TrianguloController extends AlessioPaint {
         }
         return indexes;
     }
-    
-    
+
     public void showTrianguloMenu() {
         TrianguloConsole trianguloConsole = new TrianguloConsole();
         int option = 0;
@@ -95,8 +94,15 @@ public class TrianguloController extends AlessioPaint {
                     if ("".equals(indices)) {
                         trianguloConsole.showLnMsg("Nao existe a figura na lista. ");
                     } else {
-                        int index = trianguloConsole.askInt("Digite o index que deseja excluir:  " + indices);
-                        super.excluirIndexDaLista(index);
+
+                        int index = trianguloConsole.askInt("Digite o index que deseja apagar:  " + indices);
+                        if (indices.contains(String.valueOf(index))) {
+                            super.excluirIndexDaLista(index);
+                        } else {
+                            trianguloConsole.showLnMsg("Este indice é invalido.");
+                        }
+
+                        //quad = (Quadrado) super.getFiguraIndiceLista(indices);
                     }
                     break;
                 default:
@@ -105,17 +111,5 @@ public class TrianguloController extends AlessioPaint {
             }
         } while (option < 6);
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
 }

@@ -17,8 +17,7 @@ import pc2.lab.aula09.projetoFigGeometricaLucas.view.TrapezioConsole;
  * @author Lucas Letro
  */
 public class TrapezioController extends AlessioPaint {
-    
-    
+
     public String getIndicesDosTrapezios() {
         ArrayList<FiguraGeometrica> lista = super.getListaFiguraGeometrica();
         String indexes = "";
@@ -30,8 +29,7 @@ public class TrapezioController extends AlessioPaint {
         }
         return indexes;
     }
-    
-    
+
     public void showTrapezioMenu() {
         TrapezioConsole trapezioConsole = new TrapezioConsole();
         int option = 0;
@@ -96,8 +94,15 @@ public class TrapezioController extends AlessioPaint {
                     if ("".equals(indices)) {
                         trapezioConsole.showLnMsg("Nao existe a figura na lista. ");
                     } else {
-                        int index = trapezioConsole.askInt("Digite o index que deseja excluir:  " + indices);
-                        super.excluirIndexDaLista(index);
+
+                        int index = trapezioConsole.askInt("Digite o index que deseja apagar:  " + indices);
+                        if (indices.contains(String.valueOf(index))) {
+                            super.excluirIndexDaLista(index);
+                        } else {
+                            trapezioConsole.showLnMsg("Este indice é invalido.");
+                        }
+
+                        //quad = (Quadrado) super.getFiguraIndiceLista(indices);
                     }
                     break;
                 default:
@@ -106,16 +111,5 @@ public class TrapezioController extends AlessioPaint {
             }
         } while (option < 6);
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
 }
