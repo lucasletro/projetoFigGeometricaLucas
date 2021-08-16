@@ -3,6 +3,9 @@ package pc2.lab.aula09.projetoFigGeometricaLucas.model;
 import pc2.lab.aula09.projetoFigGeometricaLucas.model.enums.OpcoesMenuEnum;
 
 public class Retangulo extends Quadrilatero{
+    
+    private int base;   //
+    private int altura;  //
 
     public Retangulo() {
         this(1, 2);
@@ -15,9 +18,25 @@ public class Retangulo extends Quadrilatero{
     public Retangulo(int base, int altura) {
         inferiorEsquerdo = new Ponto(0,0);
         inferiorDireito = new Ponto(base,0);
-        superiorDireito = new Ponto(base,altura);
-        superiorEsquerdo = new Ponto(0,altura);
+        superiorDireito = new Ponto(base,altura);  //
+        superiorEsquerdo = new Ponto(0,altura);   //
+        
+        this.base = base;
+        this.altura = altura;
     }
+
+    public int getBase() {   //
+        return base;
+    }
+
+    public int getAltura() {   //
+        return altura;
+    }
+    
+    
+    
+    
+    
 
     public Ponto getInferiorEsquerdo() {
         return inferiorEsquerdo;

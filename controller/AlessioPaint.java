@@ -1,6 +1,9 @@
 package pc2.lab.aula09.projetoFigGeometricaLucas.controller;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
@@ -15,18 +18,18 @@ import pc2.lab.aula09.projetoFigGeometricaLucas.view.QuadradoConsole;
 public class AlessioPaint {
 
     //private FiguraGeometrica[] vetor;
-    private static ArrayList<FiguraGeometrica> figuraGeometricaArrayList;
-    private FiguraGeometrica[] figuraSalvar = new FiguraGeometrica[10];
+    private ArrayList<FiguraGeometrica> figuraGeometricaArrayList = new ArrayList<FiguraGeometrica>();
     private int contador;
     private BasicConsole tela;
     private DesenhoBoard canvas;
+    private String textoSalvar;
 
     public AlessioPaint() {
         //vetor= new FiguraGeometrica[5];
-        figuraGeometricaArrayList = new ArrayList<FiguraGeometrica>();
         contador = 0;
         tela = new BasicConsole();
         canvas = new DesenhoBoard();
+        textoSalvar = "";
     }
 
     public void mostrarMenu() {
@@ -77,21 +80,30 @@ public class AlessioPaint {
                 break;
             case TEXTO:
                 tela.showLnMsg("Escolha uma figura geometrica!"); //////////
+                mostrarMenu();
                 break;
             case RETA:
                 tela.showLnMsg("Escolha uma figura geometrica!"); //////////
+                mostrarMenu();
                 break;
             case LISTAR:
                 listar();
+                mostrarMenu();
+                break;
+            case RECARREGAR:
+                recuperarArray(figuraGeometricaArrayList);
+                mostrarMenu();
                 break;
             case SALVAR:
                 salvarFiguras(figuraGeometricaArrayList);
+                mostrarMenu();
                 break;
             case APAGAR:
                 apagarFiguras();
                 break;
             case DESENHAR:
                 //canvas.desenhar(vetor);
+                mostrarMenu();
                 break;
             case SAIR:
                 break;
@@ -104,12 +116,22 @@ public class AlessioPaint {
     public boolean insertFiguraGeometrica(FiguraGeometrica fig) {
         if (contador < 10) {
             figuraGeometricaArrayList.add(contador, fig);
-            figuraSalvar[contador] = fig;
-            for (int i = 0; i <= contador; i++) {
-                System.out.println(figuraSalvar[i].toString());
-                System.out.println(i);
-            }
+            //textoSalvar += fig.toString() + contador;
             contador += 1;
+
+            if (fig.getClass().equals(Quadrado.class)) {
+                textoSalvar += "quadrado;" + ((Quadrado) fig).getTamanhoLado() + "\n";
+            } else if (fig.getClass().equals(Retangulo.class)) {
+                textoSalvar += "retangulo;" + ((Retangulo) fig).getBase() + ";" + ((Retangulo) fig).getAltura() + "\n";
+            } else if (fig.getClass().equals(Triangulo.class)) {
+                //textoSalvar += "q;" + ((Triangulo)fig)();
+            } else if (fig.getClass().equals(Losango.class)) {
+
+            } else if (fig.getClass().equals(Circulo.class)) {
+
+            } else if (fig.getClass().equals(Trapezio.class)) {
+
+            }
 
             System.out.println("Figura inserida");
             return true;
@@ -150,14 +172,8 @@ public class AlessioPaint {
     public void salvarFiguras(ArrayList<FiguraGeometrica> figuras) {
         try {
             FileWriter writer = new FileWriter("C:\\Users\\Lucas Letro\\Desktop\\salvar\\figuras.txt");
-            String texto = "";
-            for (int i = 0; i < 10; i++) {
-                if (figuraSalvar[i] != null) {
 
-                    texto += figuraSalvar[i].toString() + "\n";
-                }
-            }
-            writer.write(texto);
+            writer.write(textoSalvar);
             writer.close();
             System.out.println("Figuras geometricas salvas");
         } catch (IOException e) {
@@ -185,6 +201,53 @@ public class AlessioPaint {
             if (figuraGeometricaArrayList.get(i) != null) {
                 System.out.println(figuraGeometricaArrayList.get(i).toString());
             }
+        }
+    }
+
+    public void recuperarArray(ArrayList<FiguraGeometrica> listaFiguraGeometricas) {
+        String figuraRecuperada[] = new String[10];
+        listaFiguraGeometricas.clear();
+        try {
+            BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Lucas Letro\\Desktop\\salvar\\figuras.txt"));
+            int contadorLinha = 0;
+            String linha = br.readLine();
+            while (linha != null) {
+                figuraRecuperada[contadorLinha] = linha;
+                linha = br.readLine();
+                contadorLinha++;
+            }
+            br.close();
+            recuperarObjeto(figuraRecuperada, listaFiguraGeometricas);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void recuperarObjeto(String figuraRecuperada[], ArrayList<FiguraGeometrica> listaFiguraGeometricas) {
+        String linha[];
+        for (int i = 0; i < figuraRecuperada.length; i++) {
+
+            if (figuraRecuperada[i] != null) {
+                linha = figuraRecuperada[i].split(";");
+                if (linha[0].contains("quadrado")) {
+                    Quadrado quad = new Quadrado(Integer.parseInt(linha[1]));
+                    figuraGeometricaArrayList.add(quad);
+
+                } else if (linha[0].contains("retangulo")) {
+                    Retangulo ret = new Retangulo(Integer.parseInt(linha[1]), Integer.parseInt(linha[2]));
+                    figuraGeometricaArrayList.add(ret);
+                } else if (linha[0].contains("triangulo")) {
+
+                } else if (linha[0].contains("losango")) {
+
+                } else if (linha[0].contains("circulo")) {
+
+                } else if (linha[0].contains("trapezio")) {
+
+                }
+            }
+
         }
     }
 

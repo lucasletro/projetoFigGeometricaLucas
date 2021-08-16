@@ -12,7 +12,9 @@ public class Quadrado extends Retangulo  {
 
     public Quadrado(int tamanhoLado) {
         this(new Ponto(0, 0), tamanhoLado);
+        this.tamanhoLado = tamanhoLado;
     }
+    
 
     public Quadrado(Ponto origem, int tamanhoLado) {
         this.tamanhoLado = tamanhoLado;
@@ -47,6 +49,7 @@ public class Quadrado extends Retangulo  {
         return tamanhoLado * tamanhoLado;
     }
 
+    @Override
     public double getPerimetro() {
         return tamanhoLado * 4;
     }
@@ -76,5 +79,12 @@ public class Quadrado extends Retangulo  {
     public int hashCode() {
         return tamanhoLado;
     }
+
+    public int getTamanhoLado() {
+        return tamanhoLado;
+    }
+    
+    
+    
 
 }

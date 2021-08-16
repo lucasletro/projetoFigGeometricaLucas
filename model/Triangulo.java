@@ -5,12 +5,30 @@ public class Triangulo extends FiguraGeometrica {
     private Ponto inferiorEsquerdo;
     private Ponto inferiorDireito;
     private Ponto superior;
-
+    
+    private int base, altura;
+    
     public Triangulo(int base, int altura) {
         inferiorEsquerdo = new Ponto(0, 0);
         inferiorDireito = new Ponto(base, 0);
         superior = new Ponto(base / 2, altura);
+        
+        this.base = base;
+        this.altura = altura;
     }
+
+    public int getBase() {
+        return base;
+    }
+
+    public int getAltura() {
+        return altura;
+    }
+    
+    
+    
+    
+    
 
     public double AreaTriangulo() {
         return -1;

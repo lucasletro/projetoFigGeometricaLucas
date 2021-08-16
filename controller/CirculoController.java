@@ -17,6 +17,7 @@ import pc2.lab.aula09.projetoFigGeometricaLucas.view.CirculoConsole;
  * @author Lucas Letro
  */
 public class CirculoController extends AlessioPaint {
+    
 
     public String getIndicesDosCirculos() {
         ArrayList<FiguraGeometrica> lista = super.getListaFiguraGeometrica();
