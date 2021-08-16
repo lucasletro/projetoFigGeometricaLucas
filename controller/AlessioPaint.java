@@ -75,6 +75,12 @@ public class AlessioPaint {
                 //Trapezio trap = tela.askTrapezio();
                 //insertFiguraGeometrica(trap);
                 break;
+            case TEXTO:
+                tela.showLnMsg("Escolha uma figura geometrica!"); //////////
+                break;
+            case RETA:
+                tela.showLnMsg("Escolha uma figura geometrica!"); //////////
+                break;
             case LISTAR:
                 listar();
                 break;
@@ -87,9 +93,7 @@ public class AlessioPaint {
             case DESENHAR:
                 //canvas.desenhar(vetor);
                 break;
-
             case SAIR:
-
                 break;
             default:
         }
@@ -101,12 +105,12 @@ public class AlessioPaint {
         if (contador < 10) {
             figuraGeometricaArrayList.add(contador, fig);
             figuraSalvar[contador] = fig;
-            for(int i = 0; i <= contador; i++){
+            for (int i = 0; i <= contador; i++) {
                 System.out.println(figuraSalvar[i].toString());
                 System.out.println(i);
             }
-            contador+=1;
-            
+            contador += 1;
+
             System.out.println("Figura inserida");
             return true;
         } else {
@@ -149,7 +153,7 @@ public class AlessioPaint {
             String texto = "";
             for (int i = 0; i < 10; i++) {
                 if (figuraSalvar[i] != null) {
-                    
+
                     texto += figuraSalvar[i].toString() + "\n";
                 }
             }
