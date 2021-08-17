@@ -49,11 +49,14 @@ Sim, pois a programação orientada a objetos propõe uma representação mais o
 3. Porque o uso de interfaces é útil no lugar do uso de Herança Multipla?
 
 
+
 4. Você tem alguma classe que usa extends e implements simultaneamente? se sim qual a justificativa para isso no modelo do seu trabalho?
 
+Não.
 
 5. O que é UML e dentre os possíveis diagramas existentes, cite 3 que poderiam ser úteis para descrever o seu projeto prático desta disciplina.
 
+A Linguagem Unificada de Modelagem é uma linguagem de notação utilizada para modelar e documentar as diversas fases do desenvolvimento de sistemas orientados a objetos.
 
 6. Do seu protótipo até esta etapa você acabou fazendo uso de comportamentos Polimórficos no seu trabalho prático. Qual foi o benefício sobre a visão de "Legibilidade" do código fonte? E sobre "organização" das classes?
 
