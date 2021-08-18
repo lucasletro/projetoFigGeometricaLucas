@@ -44,11 +44,11 @@ Sim, pois a programação orientada a objetos propõe uma representação mais o
 
 2. O que é o tratamento de exceções e porque ele é necessário para a organização da transmissão de mensagens entre classes?
 
-
+O tratamento de exceções é o mecanismo responsável pelo tratamento da ocorrência de condições que alteram o fluxo normal da execução de programas de computadores. É necessario pois ajuda a aprimorar a tolerância a falhas de um programa.
 
 3. Porque o uso de interfaces é útil no lugar do uso de Herança Multipla?
 
-
+Porque interfaces são como classes 100% abstratas, ou seja, é completamente proibido qualquer tipo de implementação nela, logo, não há o menor problema se as duas interfaces tiverem um método com a mesma assinatura, pois quem vai implementar o método é a classe que implementa as interfaces.
 
 4. Você tem alguma classe que usa extends e implements simultaneamente? se sim qual a justificativa para isso no modelo do seu trabalho?
 
@@ -60,4 +60,4 @@ A Linguagem Unificada de Modelagem é uma linguagem de notação utilizada para 
 
 6. Do seu protótipo até esta etapa você acabou fazendo uso de comportamentos Polimórficos no seu trabalho prático. Qual foi o benefício sobre a visão de "Legibilidade" do código fonte? E sobre "organização" das classes?
 
-
+O polimorfismo permite que um mesmo nome represente varios comportamentos diferentes desta maneira deixando a classe mais legivel, organizada e reutilizavel.
