@@ -32,10 +32,10 @@ public class RetanguloConsole extends BasicConsole {
         if (lista.isEmpty()) {
             showLnMsg("Nao existe a figura na lista. ");
         } else {
-            showLnMsg("------ LISTAR RETANGULO -----");
+            showMsg("------ LISTAR RETANGULO -----\n");
             for (int i = 0; i < lista.size(); i++) {
                 if (lista.get(i) instanceof Retangulo) {
-                    showLnMsg(lista.get(i).toString());
+                    showMsg(lista.get(i).toString() + "\n");
                 }
             }
         }

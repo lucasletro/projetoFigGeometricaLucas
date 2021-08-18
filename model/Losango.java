@@ -6,6 +6,34 @@ public class Losango extends Quadrilatero {
     private int diagonalSuperior;
     private int tamanhoLado;
 
+    public int getDiagonalInferior() {
+        return diagonalInferior;
+    }
+
+    public void setDiagonalInferior(int diagonalInferior) {
+        this.diagonalInferior = diagonalInferior;
+    }
+
+    public int getDiagonalSuperior() {
+        return diagonalSuperior;
+    }
+
+    public void setDiagonalSuperior(int diagonalSuperior) {
+        this.diagonalSuperior = diagonalSuperior;
+    }
+
+    public int getTamanhoLado() {
+        return tamanhoLado;
+    }
+
+    public void setTamanhoLado(int tamanhoLado) {
+        this.tamanhoLado = tamanhoLado;
+    }
+    
+    
+    
+    
+
     public Losango(int diagonalInferior, int diagonalSuperior, int tamanhoLado) {
         this.diagonalInferior = diagonalInferior;
         this.diagonalSuperior = diagonalSuperior;

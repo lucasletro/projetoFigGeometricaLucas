@@ -94,7 +94,7 @@ public class TrapezioController extends AlessioPaint {
                     if ("".equals(indices)) {
                         trapezioConsole.showLnMsg("Nao existe a figura na lista. ");
                     } else {
-
+                        super.setContador(super.getContador()-1);
                         int index = trapezioConsole.askInt("Digite o index que deseja apagar:  " + indices);
                         if (indices.contains(String.valueOf(index))) {
                             super.excluirIndexDaLista(index);

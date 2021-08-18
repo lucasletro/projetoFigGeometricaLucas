@@ -26,10 +26,10 @@ public class CirculoConsole extends BasicConsole {
         if (lista.isEmpty()) {
             showLnMsg("Nao existe a figura na lista. ");
         } else {
-            showLnMsg("------ LISTAR CIRCULO -----");
+            showMsg("------ LISTAR CIRCULO -----\n");
             for (int i = 0; i < lista.size(); i++) {
                 if (lista.get(i) instanceof Circulo) {
-                    showLnMsg(lista.get(i).toString());
+                    showMsg(lista.get(i).toString() + "\n");
                 }
             }
         }

@@ -24,6 +24,14 @@ public class AlessioPaint {
     private DesenhoBoard canvas;
     private String textoSalvar;
 
+    public int getContador() {
+        return contador;
+    }
+
+    public void setContador(int contador) {
+        this.contador = contador;
+    }
+
     public AlessioPaint() {
         //vetor= new FiguraGeometrica[5];
         contador = 0;
@@ -83,7 +91,9 @@ public class AlessioPaint {
                 mostrarMenu();
                 break;
             case RETA:
-                tela.showLnMsg("Escolha uma figura geometrica!"); //////////
+                //tela.showLnMsg("Escolha uma figura geometrica!"); //////////
+                Reta reta = new Reta();
+                tela.showLnMsg(reta.toString());
                 mostrarMenu();
                 break;
             case LISTAR:
@@ -92,6 +102,7 @@ public class AlessioPaint {
                 break;
             case RECARREGAR:
                 recuperarArray(figuraGeometricaArrayList);
+                
                 mostrarMenu();
                 break;
             case SALVAR:
@@ -124,16 +135,16 @@ public class AlessioPaint {
             } else if (fig.getClass().equals(Retangulo.class)) {
                 textoSalvar += "retangulo;" + ((Retangulo) fig).getBase() + ";" + ((Retangulo) fig).getAltura() + "\n";
             } else if (fig.getClass().equals(Triangulo.class)) {
-                //textoSalvar += "q;" + ((Triangulo)fig)();
+                textoSalvar += "triangulo;" + ((Triangulo) fig).getBase() + ";" + ((Triangulo) fig).getAltura() + "\n";
             } else if (fig.getClass().equals(Losango.class)) {
-
+                textoSalvar += "losango;" + ((Losango) fig).getDiagonalInferior() + ";" + ((Losango) fig).getDiagonalSuperior() + ";" + ((Losango) fig).getTamanhoLado() + "\n";
             } else if (fig.getClass().equals(Circulo.class)) {
-
+                textoSalvar += "circulo;" + ((Circulo) fig).getRaio() + "\n";
             } else if (fig.getClass().equals(Trapezio.class)) {
-
+                textoSalvar += "trapezio;" + ((Trapezio) fig).getBaseMaior() + ";" + ((Trapezio) fig).getBaseMenor() + ";" + ((Trapezio) fig).getAltura() + ";" + ((Trapezio) fig).getLado() + "\n";
             }
 
-            System.out.println("Figura inserida");
+            tela.showLnMsg("Figura inserida");
             return true;
         } else {
             return false;
@@ -175,9 +186,9 @@ public class AlessioPaint {
 
             writer.write(textoSalvar);
             writer.close();
-            System.out.println("Figuras geometricas salvas");
+            tela.showLnMsg("Figuras geometricas salvas");
         } catch (IOException e) {
-            System.out.println("Erro ao salvar arquivo.");
+            tela.showLnMsg("Erro ao salvar arquivo.");
             e.printStackTrace();
         }
 
@@ -218,7 +229,7 @@ public class AlessioPaint {
             }
             br.close();
             recuperarObjeto(figuraRecuperada, listaFiguraGeometricas);
-
+            tela.showMsg("Figura(s) recuperada\n");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -238,13 +249,17 @@ public class AlessioPaint {
                     Retangulo ret = new Retangulo(Integer.parseInt(linha[1]), Integer.parseInt(linha[2]));
                     figuraGeometricaArrayList.add(ret);
                 } else if (linha[0].contains("triangulo")) {
-
+                    Triangulo tri = new Triangulo(Integer.parseInt(linha[1]), Integer.parseInt(linha[2]));
+                    figuraGeometricaArrayList.add(tri);
                 } else if (linha[0].contains("losango")) {
-
+                    Losango los = new Losango(Integer.parseInt(linha[1]), Integer.parseInt(linha[2]), Integer.parseInt(linha[3]));
+                    figuraGeometricaArrayList.add(los);
                 } else if (linha[0].contains("circulo")) {
-
+                    Circulo cir = new Circulo(Integer.parseInt(linha[1]));
+                    figuraGeometricaArrayList.add(cir);
                 } else if (linha[0].contains("trapezio")) {
-
+                    Trapezio trap = new Trapezio(Integer.parseInt(linha[1]), Integer.parseInt(linha[2]), Integer.parseInt(linha[3]), Integer.parseInt(linha[4]));
+                    figuraGeometricaArrayList.add(trap);
                 }
             }
 

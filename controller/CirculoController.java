@@ -95,7 +95,7 @@ public class CirculoController extends AlessioPaint {
                     if ("".equals(indices)) {
                         circuloConsole.showLnMsg("Nao existe a figura na lista. ");
                     } else {
-
+                        super.setContador(super.getContador()-1);
                         int index = circuloConsole.askInt("Digite o index que deseja apagar:  " + indices);
                         if (indices.contains(String.valueOf(index))) {
                             super.excluirIndexDaLista(index);

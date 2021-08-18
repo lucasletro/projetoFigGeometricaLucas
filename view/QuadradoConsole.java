@@ -19,10 +19,10 @@ public class QuadradoConsole extends BasicConsole {
         if (lista.isEmpty()) {
             showLnMsg("Nao existe a figura na lista. ");
         } else {
-            showLnMsg("------ LISTAR QUADRADO -----");
+            showMsg("------ LISTAR QUADRADO -----\n");
             for (int i = 0; i < lista.size(); i++) {
                 if (lista.get(i) instanceof Quadrado) {
-                    showLnMsg(lista.get(i).toString());
+                    showMsg(lista.get(i).toString() + "\n");
                 }
             }
         }

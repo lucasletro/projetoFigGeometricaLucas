@@ -20,7 +20,7 @@ public class BasicConsole {
     }
 
     public void showLnMsg(String msg) {
-        System.out.println(msg);
+        System.out.println("--------------------------------------\n" + msg);
     }
 
     public void showMsg(String msg) {
@@ -33,13 +33,15 @@ public class BasicConsole {
     }
 
     public int showSubMenu() {
-        showMsg("\n\nDigite uma opção \n"
+        showMsg("--------------------------------------"
+                + "\nDigite uma opção \n\n"
                 + "1 - Novo \n"
                 + "2 - Editar\n"
                 + "3 - Listar\n"
                 + "4 - Mostrar\n"
                 + "5 - Apagar\n"
-                + "6 - Voltar\n");
+                + "6 - Voltar\n" 
+                + "--------------------------------------\n" );
 
         int opcao1 = in.nextInt();
         return opcao1;
@@ -74,9 +76,10 @@ public class BasicConsole {
 
     public OpcoesMenuEnum askOpcaoMenuPrincial() {
         //Loop para entregar uma opção valida
-        showMsg("\nDigite uma opção \n"
-                + "1 - Texto\n"          ////////
-                + "2 - Criar Reta\n"       ///////
+        showMsg("--------------------------------------" 
+                + "\nDigite uma opção \n\n"
+                + "1 - Texto\n"          
+                + "2 - Criar Reta\n"       
                 + "3 - Criar Quadrado\n"  
                 + "4 - Criar Retangulo\n"
                 + "5 - Criar Triangulo\n"
@@ -88,7 +91,8 @@ public class BasicConsole {
                 + "L - Listar\n"
                 + "S - Salvar\n"     //////////////
                 + "R - Recarregar\n" /////////////////
-                + "X - Sair\n");
+                + "X - Sair\n" 
+                + "--------------------------------------\n" );
 
         String opcao = in.next();
 

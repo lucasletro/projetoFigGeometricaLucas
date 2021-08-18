@@ -93,7 +93,7 @@ public class RetanguloController extends AlessioPaint {
                     if ("".equals(indices)) {
                         retanguloConsole.showLnMsg("Nao existe a figura na lista. ");
                     } else {
-
+                        super.setContador(super.getContador()-1);
                         int index = retanguloConsole.askInt("Digite o index que deseja apagar:  " + indices);
                         if (indices.contains(String.valueOf(index))) {
                             super.excluirIndexDaLista(index);

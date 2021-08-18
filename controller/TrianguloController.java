@@ -94,7 +94,7 @@ public class TrianguloController extends AlessioPaint {
                     if ("".equals(indices)) {
                         trianguloConsole.showLnMsg("Nao existe a figura na lista. ");
                     } else {
-
+                        super.setContador(super.getContador()-1);
                         int index = trianguloConsole.askInt("Digite o index que deseja apagar:  " + indices);
                         if (indices.contains(String.valueOf(index))) {
                             super.excluirIndexDaLista(index);

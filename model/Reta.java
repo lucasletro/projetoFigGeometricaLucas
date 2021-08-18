@@ -35,4 +35,13 @@ public class Reta extends FiguraGeometrica{
     public void setPontoFinal(Ponto pontoFinal) {
         this.pontoFinal = pontoFinal;
     }
+
+    @Override
+    public String toString() {
+        return "Reta{" + "pontoInicia=" + pontoInicia + ", pontoFinal=" + pontoFinal + '}';
+    }
+    
+    
+    
+    
 }
