@@ -113,6 +113,7 @@ public class AlessioPaint {
                 apagarFiguras();
                 break;
             case DESENHAR:
+                //new DesenhoBoard();
                 //canvas.desenhar(vetor);
                 mostrarMenu();
                 break;
@@ -123,6 +124,8 @@ public class AlessioPaint {
 
         //   } while (opcao != OpcoesMenuEnum.SAIR);
     }
+    
+    
 
     public boolean insertFiguraGeometrica(FiguraGeometrica fig) {
         if (contador < 10) {
