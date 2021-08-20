@@ -1,5 +1,6 @@
 package pc2.lab.aula09.projetoFigGeometricaLucas.controller;
 
+import java.awt.Graphics;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -10,8 +11,6 @@ import java.io.ObjectOutputStream;
 import pc2.lab.aula09.projetoFigGeometricaLucas.model.*;
 import pc2.lab.aula09.projetoFigGeometricaLucas.model.enums.OpcoesMenuEnum;
 import pc2.lab.aula09.projetoFigGeometricaLucas.view.BasicConsole;
-import pc2.lab.aula09.projetoFigGeometricaLucas.view.DesenhoBoard;
-
 import java.util.ArrayList;
 import pc2.lab.aula09.projetoFigGeometricaLucas.view.QuadradoConsole;
 
@@ -23,6 +22,8 @@ public class AlessioPaint {
     private BasicConsole tela;
     private DesenhoBoard canvas;
     private String textoSalvar;
+    
+    private Graphics grafico;
 
     public int getContador() {
         return contador;
@@ -34,6 +35,7 @@ public class AlessioPaint {
 
     public AlessioPaint() {
         //vetor= new FiguraGeometrica[5];
+        //grafico = new Graphics2d;
         contador = 0;
         tela = new BasicConsole();
         canvas = new DesenhoBoard();
@@ -113,6 +115,7 @@ public class AlessioPaint {
                 apagarFiguras();
                 break;
             case DESENHAR:
+                desenharFiguras();
                 //new DesenhoBoard();
                 //canvas.desenhar(vetor);
                 mostrarMenu();
@@ -126,6 +129,19 @@ public class AlessioPaint {
         //   } while (opcao != OpcoesMenuEnum.SAIR);
     }
     
+    
+    public void desenharFiguras(){
+        if(figuraGeometricaArrayList.isEmpty()){
+            tela.showLnMsg("Lista vazia");
+        }else{
+            /*for(int i = 0; i <=figuraGeometricaArrayList.size(); i++){
+                canvas.desenhar(figuraGeometricaArrayList.get(i), i);
+            }*/
+            canvas.getFiguras(figuraGeometricaArrayList);
+            canvas.setVisible(true);
+            
+        }
+    }
     
 
     public boolean insertFiguraGeometrica(FiguraGeometrica fig) {
