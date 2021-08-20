@@ -13,17 +13,18 @@ public class DesenhoBoard extends JFrame {
 
     public DesenhoBoard() {
         setSize(1200,900);
-        setLocationRelativeTo(null);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        //setLocationRelativeTo(null);
+        //setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
     }
     
-    @Override
+    /*@Override
     public void paint(Graphics g){
         g.drawLine(100, 100, 500, 500);
-        //g.drawRect(400, 100, 300, 300);
+        g.drawRect(400, 100, 300, 300);
         g.drawOval(420, 120, 260, 260);
-    }
+        g.drawRect(WIDTH, WIDTH, WIDTH, HEIGHT);
+    }*/
     
     
     

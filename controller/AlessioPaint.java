@@ -118,6 +118,7 @@ public class AlessioPaint {
                 mostrarMenu();
                 break;
             case SAIR:
+                System.exit(0);
                 break;
             default:
         }
