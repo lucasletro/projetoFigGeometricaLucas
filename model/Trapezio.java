@@ -29,6 +29,13 @@ public class Trapezio extends Quadrilatero {
     private double altura;
     private double lado;
 
+    public Trapezio(double baseMaior, double baseMenor, double altura, double lado) {
+        this.baseMaior = baseMaior;
+        this.baseMenor = baseMenor;
+        this.altura = altura;
+        this.lado = lado;
+    }
+
     public double getBaseMaior() {
         return baseMaior;
     }
@@ -58,16 +65,6 @@ public class Trapezio extends Quadrilatero {
     }
 
     public void setLado(double lado) {
-        this.lado = lado;
-    }
-    
-    
-    
-
-    public Trapezio(double baseMaior, double baseMenor, double altura, double lado) {
-        this.baseMaior = baseMaior;
-        this.baseMenor = baseMenor;
-        this.altura = altura;
         this.lado = lado;
     }
 

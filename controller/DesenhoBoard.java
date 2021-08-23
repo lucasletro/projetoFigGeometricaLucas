@@ -122,9 +122,14 @@ public class DesenhoBoard extends JFrame {
                     4
             );
         } else if (figura.getClass() == Circulo.class) {
-
+            super.getGraphics().drawOval(
+                    x,
+                    y, 
+                    (int)((Circulo)figura).getRaio() * 2 * 15, 
+                    (int)((Circulo)figura).getRaio() * 2 * 15
+            );
         } else if (figura.getClass() == Trapezio.class) {
-
+            
         }
 
     }
