@@ -94,12 +94,33 @@ public class DesenhoBoard extends JFrame {
             super.getGraphics().drawRect(x, y, ((Retangulo) figura).getBase() * 15, ((Retangulo) figura).getAltura() * 15);
         } else if (figura.getClass() == Triangulo.class) {
             super.getGraphics().drawPolygon(
-                    new int[]{x - ((Triangulo)figura).getBase() * 15, x, x + ((Triangulo)figura).getBase() * 15},
-                    new int[]{y + ((Triangulo)figura).getAltura() * 15, y, y + ((Triangulo)figura).getAltura()* 15},
-                    3);
+                    new int[]{
+                        x - ((Triangulo)figura).getBase() * 15,
+                        x,
+                        x + ((Triangulo)figura).getBase() * 15},
+                    new int[]{
+                        y + ((Triangulo)figura).getAltura() * 15,
+                        y,
+                        y + ((Triangulo)figura).getAltura()* 15},
+                    3
+            );
             
         } else if (figura.getClass() == Losango.class) {
-
+            super.getGraphics().drawPolygon(
+                    new int[]{
+                        x,
+                        x + ((Losango)figura).getDiagonalInferior()* 15,
+                        x + ((Losango)figura).getDiagonalInferior() * 2 * 15,
+                        x + ((Losango)figura).getDiagonalInferior() * 15
+                    },
+                    new int[]{
+                        y + ((Losango)figura).getDiagonalSuperior() * 15,
+                        y,
+                        y + ((Losango)figura).getDiagonalSuperior() * 15,
+                        y + ((Losango)figura).getDiagonalSuperior() * 2* 15
+                    },
+                    4
+            );
         } else if (figura.getClass() == Circulo.class) {
 
         } else if (figura.getClass() == Trapezio.class) {

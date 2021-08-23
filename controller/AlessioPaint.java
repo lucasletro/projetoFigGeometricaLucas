@@ -157,7 +157,7 @@ public class AlessioPaint {
             } else if (fig.getClass().equals(Triangulo.class)) {
                 textoSalvar += "triangulo;" + ((Triangulo) fig).getBase() + ";" + ((Triangulo) fig).getAltura() + "\n";
             } else if (fig.getClass().equals(Losango.class)) {
-                textoSalvar += "losango;" + ((Losango) fig).getDiagonalInferior() + ";" + ((Losango) fig).getDiagonalSuperior() + ";" + ((Losango) fig).getTamanhoLado() + "\n";
+                textoSalvar += "losango;" + ((Losango) fig).getDiagonalInferior() + ";" + ((Losango) fig).getDiagonalSuperior() + "\n";
             } else if (fig.getClass().equals(Circulo.class)) {
                 textoSalvar += "circulo;" + ((Circulo) fig).getRaio() + "\n";
             } else if (fig.getClass().equals(Trapezio.class)) {
@@ -272,7 +272,7 @@ public class AlessioPaint {
                     Triangulo tri = new Triangulo(Integer.parseInt(linha[1]), Integer.parseInt(linha[2]));
                     figuraGeometricaArrayList.add(tri);
                 } else if (linha[0].contains("losango")) {
-                    Losango los = new Losango(Integer.parseInt(linha[1]), Integer.parseInt(linha[2]), Integer.parseInt(linha[3]));
+                    Losango los = new Losango(Integer.parseInt(linha[1]), Integer.parseInt(linha[2]));
                     figuraGeometricaArrayList.add(los);
                 } else if (linha[0].contains("circulo")) {
                     Circulo cir = new Circulo(Integer.parseInt(linha[1]));

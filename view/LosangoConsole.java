@@ -22,10 +22,7 @@ public class LosangoConsole extends BasicConsole {
         showLnMsg("Digite a diagonal superior do losango: ");
         int diagonalSuperior = in.nextInt();
 
-        showLnMsg("Digite o tamanho do lado do losango: ");
-        int tamanhoLado = in.nextInt();
-
-        Losango los = new Losango(diagonalInferior, diagonalSuperior, tamanhoLado);
+        Losango los = new Losango(diagonalInferior, diagonalSuperior);
         return los;
     }
 

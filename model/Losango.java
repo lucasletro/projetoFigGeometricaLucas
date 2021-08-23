@@ -4,7 +4,7 @@ public class Losango extends Quadrilatero {
 
     private int diagonalInferior;
     private int diagonalSuperior;
-    private int tamanhoLado;
+    private float tamanhoLado;
 
     public int getDiagonalInferior() {
         return diagonalInferior;
@@ -22,7 +22,7 @@ public class Losango extends Quadrilatero {
         this.diagonalSuperior = diagonalSuperior;
     }
 
-    public int getTamanhoLado() {
+    public float getTamanhoLado() {
         return tamanhoLado;
     }
 
@@ -34,22 +34,15 @@ public class Losango extends Quadrilatero {
     
     
 
-    public Losango(int diagonalInferior, int diagonalSuperior, int tamanhoLado) {
+    public Losango(int diagonalInferior, int diagonalSuperior) {
         this.diagonalInferior = diagonalInferior;
         this.diagonalSuperior = diagonalSuperior;
-        this.tamanhoLado = tamanhoLado;
-    }
-
-    public Losango(int base, int altura) {
-        inferiorEsquerdo = new Ponto(0, 0);
-        inferiorDireito = new Ponto(base, 0);
-        superiorDireito = new Ponto(base, altura);
-        superiorEsquerdo = new Ponto(0, altura);
+        this.tamanhoLado = (float) Math.sqrt(((float)diagonalInferior / 2 * (float)diagonalInferior / 2) + ((float)diagonalSuperior/ 2 * (float)diagonalSuperior/ 2));
     }
 
     //area = diagonal maior * diagonal menor / 2   D*d / 2
     public double getAreaLosango() {
-        return diagonalInferior * diagonalSuperior / 2;
+        return tamanhoLado * tamanhoLado;
     }
 
     public double getPerimetroLosango() {
@@ -61,6 +54,7 @@ public class Losango extends Quadrilatero {
     public String toString() {
         return "\n\nLosango: "
                 + "\nPerimetro: " + getPerimetroLosango()
+                + "\nTamanhoLado: " + getTamanhoLado()
                 + "\nArea: " + getAreaLosango();
 
     }
