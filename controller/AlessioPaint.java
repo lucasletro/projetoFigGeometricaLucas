@@ -22,7 +22,7 @@ public class AlessioPaint {
     private BasicConsole tela;
     private DesenhoBoard canvas;
     private String textoSalvar;
-    
+
     private Graphics grafico;
 
     public int getContador() {
@@ -94,8 +94,8 @@ public class AlessioPaint {
                 break;
             case RETA:
                 //tela.showLnMsg("Escolha uma figura geometrica!"); //////////
-                Reta reta = new Reta();
-                tela.showLnMsg(reta.toString());
+                RetaController retaController = new RetaController();
+                retaController.showRetaMenu();
                 mostrarMenu();
                 break;
             case LISTAR:
@@ -104,7 +104,7 @@ public class AlessioPaint {
                 break;
             case RECARREGAR:
                 recuperarArray(figuraGeometricaArrayList);
-                
+
                 mostrarMenu();
                 break;
             case SALVAR:
@@ -128,29 +128,28 @@ public class AlessioPaint {
 
         //   } while (opcao != OpcoesMenuEnum.SAIR);
     }
-    
-    
-    public void desenharFiguras(){
-        if(figuraGeometricaArrayList.isEmpty()){
+
+    public void desenharFiguras() {
+        if (figuraGeometricaArrayList.isEmpty()) {
             tela.showLnMsg("Lista vazia");
-        }else{
+        } else {
             /*for(int i = 0; i <=figuraGeometricaArrayList.size(); i++){
                 canvas.desenhar(figuraGeometricaArrayList.get(i), i);
             }*/
             canvas.getFiguras(figuraGeometricaArrayList);
             canvas.setVisible(true);
-            
+
         }
     }
-    
 
     public boolean insertFiguraGeometrica(FiguraGeometrica fig) {
         if (contador < 10) {
             figuraGeometricaArrayList.add(contador, fig);
             //textoSalvar += fig.toString() + contador;
             contador += 1;
-
-            if (fig.getClass().equals(Quadrado.class)) {
+            if (fig.getClass().equals(Reta.class)) {
+                textoSalvar += "reta;" + ((Reta) fig).getTamanho() + "\n";
+            } else if (fig.getClass().equals(Quadrado.class)) {
                 textoSalvar += "quadrado;" + ((Quadrado) fig).getTamanhoLado() + "\n";
             } else if (fig.getClass().equals(Retangulo.class)) {
                 textoSalvar += "retangulo;" + ((Retangulo) fig).getBase() + ";" + ((Retangulo) fig).getAltura() + "\n";
@@ -261,7 +260,11 @@ public class AlessioPaint {
 
             if (figuraRecuperada[i] != null) {
                 linha = figuraRecuperada[i].split(";");
-                if (linha[0].contains("quadrado")) {
+                if(linha[0].contains("reta")){
+                    Reta reta = new Reta(Integer.parseInt(linha[1]));
+                    figuraGeometricaArrayList.add(reta);
+                }
+                else if (linha[0].contains("quadrado")) {
                     Quadrado quad = new Quadrado(Integer.parseInt(linha[1]));
                     figuraGeometricaArrayList.add(quad);
 

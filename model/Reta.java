@@ -1,8 +1,44 @@
 package pc2.lab.aula09.projetoFigGeometricaLucas.model;
 
 public class Reta extends FiguraGeometrica{
+    
+    
+    private int tamanho;
+    
+    
+    
+    public Reta(int tamanho) {
+        this.tamanho = tamanho;
+    }
+    
+    
+    
+     public int getTamanho() {
+        return tamanho;
+    }
 
-    private Ponto pontoInicia;
+    public void setTamanho(int tamanho) {
+        this.tamanho = tamanho;
+    }
+    
+    
+    @Override
+    public String toString() {
+        return "Reta{" + "tamanho=" + tamanho + '}';
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    /*private Ponto pontoInicia;
     private Ponto pontoFinal;
 
     public Reta() {
@@ -39,7 +75,11 @@ public class Reta extends FiguraGeometrica{
     @Override
     public String toString() {
         return "Reta{" + "pontoInicia=" + pontoInicia + ", pontoFinal=" + pontoFinal + '}';
-    }
+    }*/
+
+   
+
+    
     
     
     

@@ -87,7 +87,7 @@ public class DesenhoBoard extends JFrame {
         }
 
         if (figura.getClass() == Reta.class) {
-            super.getGraphics().drawLine(x, y, x + 20, y + 20);
+            super.getGraphics().drawLine(x, y, x + ((Reta) figura).getTamanho() * 15, y );
         } else if (figura.getClass() == Quadrado.class) {
             super.getGraphics().drawRect(x, y, ((Quadrado) figura).getTamanhoLado() * 15, ((Quadrado) figura).getTamanhoLado() * 15);
         } else if (figura.getClass() == Retangulo.class) {
@@ -95,41 +95,55 @@ public class DesenhoBoard extends JFrame {
         } else if (figura.getClass() == Triangulo.class) {
             super.getGraphics().drawPolygon(
                     new int[]{
-                        x - ((Triangulo)figura).getBase() * 15,
+                        x - ((Triangulo) figura).getBase() * 15,
                         x,
-                        x + ((Triangulo)figura).getBase() * 15},
+                        x + ((Triangulo) figura).getBase() * 15},
                     new int[]{
-                        y + ((Triangulo)figura).getAltura() * 15,
+                        y + ((Triangulo) figura).getAltura() * 15,
                         y,
-                        y + ((Triangulo)figura).getAltura()* 15},
+                        y + ((Triangulo) figura).getAltura() * 15},
                     3
             );
-            
+
         } else if (figura.getClass() == Losango.class) {
             super.getGraphics().drawPolygon(
                     new int[]{
                         x,
-                        x + ((Losango)figura).getDiagonalInferior()* 15,
-                        x + ((Losango)figura).getDiagonalInferior() * 2 * 15,
-                        x + ((Losango)figura).getDiagonalInferior() * 15
+                        x + ((Losango) figura).getDiagonalInferior() * 15,
+                        x + ((Losango) figura).getDiagonalInferior() * 2 * 15,
+                        x + ((Losango) figura).getDiagonalInferior() * 15
                     },
                     new int[]{
-                        y + ((Losango)figura).getDiagonalSuperior() * 15,
+                        y + ((Losango) figura).getDiagonalSuperior() * 15,
                         y,
-                        y + ((Losango)figura).getDiagonalSuperior() * 15,
-                        y + ((Losango)figura).getDiagonalSuperior() * 2* 15
+                        y + ((Losango) figura).getDiagonalSuperior() * 15,
+                        y + ((Losango) figura).getDiagonalSuperior() * 2 * 15
                     },
                     4
             );
         } else if (figura.getClass() == Circulo.class) {
             super.getGraphics().drawOval(
                     x,
-                    y, 
-                    (int)((Circulo)figura).getRaio() * 2 * 15, 
-                    (int)((Circulo)figura).getRaio() * 2 * 15
+                    y,
+                    (int) ((Circulo) figura).getRaio() * 2 * 15,
+                    (int) ((Circulo) figura).getRaio() * 2 * 15
             );
         } else if (figura.getClass() == Trapezio.class) {
-            
+            super.getGraphics().drawPolygon(
+                    new int[]{
+                        x,
+                        x,
+                        x + (int) ((Trapezio) figura).getBaseMenor() * 15,
+                        x + (int) ((Trapezio) figura).getBaseMaior() * 15
+                    },
+                    new int[]{
+                        y + (int) ((Trapezio) figura).getAltura() * 15,
+                        y,
+                        y,
+                        y + (int) ((Trapezio) figura).getAltura() * 15
+                    },
+                    4
+            );
         }
 
     }
@@ -138,43 +152,4 @@ public class DesenhoBoard extends JFrame {
         this.array = figuraGeometrica;
     }
 
-    /*private void criarEMostrarBoard() {
-        System.out.println("Log que Criou a tela? " +
-                SwingUtilities.isEventDispatchThread());
-        JFrame f = new JFrame("Teste de Desenhos");
-        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        f.add(new PainelDeDesenho());
-        f.setSize(250, 250);
-        f.setVisible(true);
-    }
-
-    public void desenhar(FiguraGeometrica[] figs) {
-        SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                criarEMostrarBoard();
-            }
-        });
-
-
-        return;
-    }
-
-    class PainelDeDesenho extends JPanel {
-
-        public PainelDeDesenho() {
-            setBorder(BorderFactory.createLineBorder(Color.black));
-        }
-
-        public Dimension getPreferredSize() {
-            return new Dimension(300, 300);
-        }
-
-        public void paintComponent(Graphics g) {
-            super.paintComponent(g);
-
-            // Draw Text
-            g.drawString("Meu Primeiro paint!", 10, 20);
-            g.drawRect(50, 50, 10, 20);
-        }
-    }*/
 }
