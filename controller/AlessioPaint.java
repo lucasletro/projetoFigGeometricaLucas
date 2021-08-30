@@ -2,23 +2,18 @@ package pc2.lab.aula09.projetoFigGeometricaLucas.controller;
 
 import java.awt.Graphics;
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.ObjectOutputStream;
 import pc2.lab.aula09.projetoFigGeometricaLucas.model.*;
 import pc2.lab.aula09.projetoFigGeometricaLucas.model.enums.OpcoesMenuEnum;
 import pc2.lab.aula09.projetoFigGeometricaLucas.view.BasicConsole;
 import java.util.ArrayList;
-import pc2.lab.aula09.projetoFigGeometricaLucas.view.QuadradoConsole;
 
 public class AlessioPaint {
 
     //private FiguraGeometrica[] vetor;
     private ArrayList<FiguraGeometrica> figuraGeometricaArrayList;
-     private ArrayList<FiguraGeometrica> figuraGeometricaArrayList2;
     private int contador;
     private BasicConsole tela;
     private DesenhoBoard canvas;
@@ -42,7 +37,6 @@ public class AlessioPaint {
         canvas = new DesenhoBoard();
         textoSalvar = "";
         figuraGeometricaArrayList = new ArrayList<>();
-        figuraGeometricaArrayList2 = new ArrayList<>();
     }
 
     public void mostrarMenu() {
@@ -148,7 +142,6 @@ public class AlessioPaint {
     public boolean insertFiguraGeometrica(FiguraGeometrica fig) {
         if (figuraGeometricaArrayList.size() < 10) {
             figuraGeometricaArrayList.add(fig);
-            figuraGeometricaArrayList2.add(fig);
             //textoSalvar += fig.toString() + contador;
             contador += 1;
             if (fig.getClass().equals(Reta.class)) {
