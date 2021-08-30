@@ -17,7 +17,8 @@ import pc2.lab.aula09.projetoFigGeometricaLucas.view.QuadradoConsole;
 public class AlessioPaint {
 
     //private FiguraGeometrica[] vetor;
-    private ArrayList<FiguraGeometrica> figuraGeometricaArrayList = new ArrayList<FiguraGeometrica>();
+    private ArrayList<FiguraGeometrica> figuraGeometricaArrayList;
+     private ArrayList<FiguraGeometrica> figuraGeometricaArrayList2;
     private int contador;
     private BasicConsole tela;
     private DesenhoBoard canvas;
@@ -40,6 +41,8 @@ public class AlessioPaint {
         tela = new BasicConsole();
         canvas = new DesenhoBoard();
         textoSalvar = "";
+        figuraGeometricaArrayList = new ArrayList<>();
+        figuraGeometricaArrayList2 = new ArrayList<>();
     }
 
     public void mostrarMenu() {
@@ -143,8 +146,9 @@ public class AlessioPaint {
     }
 
     public boolean insertFiguraGeometrica(FiguraGeometrica fig) {
-        if (contador < 10) {
-            figuraGeometricaArrayList.add(contador, fig);
+        if (figuraGeometricaArrayList.size() < 10) {
+            figuraGeometricaArrayList.add(fig);
+            figuraGeometricaArrayList2.add(fig);
             //textoSalvar += fig.toString() + contador;
             contador += 1;
             if (fig.getClass().equals(Reta.class)) {

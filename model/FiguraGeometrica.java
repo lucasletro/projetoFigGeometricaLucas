@@ -3,7 +3,7 @@ package pc2.lab.aula09.projetoFigGeometricaLucas.model;
 import java.io.Serializable;
 import pc2.lab.aula09.projetoFigGeometricaLucas.model.enums.OpcoesMenuEnum;
 
-public class FiguraGeometrica extends Object implements Serializable{
+public class FiguraGeometrica extends Object {
 
     //public abstract OpcoesMenuEnum getOption();
     
