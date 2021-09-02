@@ -6,11 +6,9 @@
 package pc2.lab.aula09.projetoFigGeometricaLucas.controller;
 
 import java.util.ArrayList;
-//import pc2.lab.aula09.projetoFigGeometricaLucas.model.Circulo;
 import pc2.lab.aula09.projetoFigGeometricaLucas.model.FiguraGeometrica;
 import pc2.lab.aula09.projetoFigGeometricaLucas.model.Trapezio;
 import pc2.lab.aula09.projetoFigGeometricaLucas.view.TrapezioConsole;
-//import pc2.lab.aula09.projetoFigGeometricaLucas.view.CirculoConsole;
 
 /**
  *
@@ -24,7 +22,6 @@ public class TrapezioController extends AlessioPaint {
         for (int i = 0; i < lista.size(); i++) {
             if (lista.get(i) instanceof Trapezio) {
                 indexes = indexes + ", " + String.valueOf(i);
-                //showLnMsg("Index do quadrado:" + i);
             }
         }
         return indexes;
@@ -58,7 +55,6 @@ public class TrapezioController extends AlessioPaint {
                             trapezioConsole.showLnMsg("Este indice é invalido.");
                         }
 
-                        //quad = (Quadrado) super.getFiguraIndiceLista(indices);
                     }
 
                     break;
@@ -84,9 +80,6 @@ public class TrapezioController extends AlessioPaint {
 
                     }
 
-                    //arrayFig = super.getListaFiguraGeometrica();
-                    //quadrado console perguntar qual indice desejado (parametro indices)
-                    //super.listarindice toString()
                     break;
                 case 5:
                     //apagar
@@ -94,7 +87,7 @@ public class TrapezioController extends AlessioPaint {
                     if ("".equals(indices)) {
                         trapezioConsole.showLnMsg("Nao existe a figura na lista. ");
                     } else {
-                        super.setContador(super.getContador()-1);
+                        super.setContador(super.getContador() - 1);
                         int index = trapezioConsole.askInt("Digite o index que deseja apagar:  " + indices);
                         if (indices.contains(String.valueOf(index))) {
                             super.excluirIndexDaLista(index);
@@ -102,11 +95,13 @@ public class TrapezioController extends AlessioPaint {
                             trapezioConsole.showLnMsg("Este indice é invalido.");
                         }
 
-                        //quad = (Quadrado) super.getFiguraIndiceLista(indices);
                     }
                     break;
-                default:
+                case 6:
                     super.mostrarMenu();
+                    break;
+                default:
+                    showTrapezioMenu();
                     break;
             }
         } while (option < 6);

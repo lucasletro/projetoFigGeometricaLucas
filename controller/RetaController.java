@@ -15,15 +15,13 @@ import pc2.lab.aula09.projetoFigGeometricaLucas.view.RetaConsole;
  * @author Lucas Letro
  */
 public class RetaController extends AlessioPaint {
-    
-    
+
     public String getIndicesDasRetas() {
         ArrayList<FiguraGeometrica> lista = super.getListaFiguraGeometrica();
         String indexes = "";
         for (int i = 0; i < lista.size(); i++) {
             if (lista.get(i) instanceof Reta) {
                 indexes = indexes + ", " + String.valueOf(i);
-                //showLnMsg("Index do quadrado:" + i);
             }
         }
         return indexes;
@@ -57,7 +55,6 @@ public class RetaController extends AlessioPaint {
                             RetaConsole.showLnMsg("Este indice é invalido.");
                         }
 
-                        //quad = (Quadrado) super.getFiguraIndiceLista(indices);
                     }
 
                     break;
@@ -83,9 +80,6 @@ public class RetaController extends AlessioPaint {
 
                     }
 
-                    //arrayFig = super.getListaFiguraGeometrica();
-                    //quadrado console perguntar qual indice desejado (parametro indices)
-                    //super.listarindice toString()
                     break;
                 case 5:
                     //apagar
@@ -93,7 +87,7 @@ public class RetaController extends AlessioPaint {
                     if ("".equals(indices)) {
                         RetaConsole.showLnMsg("Nao existe a figura na lista. ");
                     } else {
-                        super.setContador(super.getContador()-1);
+                        super.setContador(super.getContador() - 1);
                         int index = RetaConsole.askInt("Digite o index que deseja apagar:  " + indices);
                         if (indices.contains(String.valueOf(index))) {
                             super.excluirIndexDaLista(index);
@@ -101,26 +95,18 @@ public class RetaController extends AlessioPaint {
                             RetaConsole.showLnMsg("Este indice é invalido.");
                         }
 
-                        //quad = (Quadrado) super.getFiguraIndiceLista(indices);
                     }
 
                     break;
 
-                default:
+                case 6:
                     super.mostrarMenu();
+                    break;
+                default:
+                    showRetaMenu();
                     break;
             }
         } while (option < 6);
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
 }

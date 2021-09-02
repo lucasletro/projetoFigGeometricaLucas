@@ -12,7 +12,6 @@ import java.util.ArrayList;
 
 public class AlessioPaint {
 
-    //private FiguraGeometrica[] vetor;
     private ArrayList<FiguraGeometrica> figuraGeometricaArrayList;
     private int contador;
     private BasicConsole tela;
@@ -30,8 +29,6 @@ public class AlessioPaint {
     }
 
     public AlessioPaint() {
-        //vetor= new FiguraGeometrica[5];
-        //grafico = new Graphics2d;
         contador = 0;
         tela = new BasicConsole();
         canvas = new DesenhoBoard();
@@ -52,45 +49,32 @@ public class AlessioPaint {
             case QUADRADO:
                 QuadradoController quadradoController = new QuadradoController();
                 quadradoController.showQuadradoMenu();
-                //Quadrado quad = tela.askQuadrado(); ///////////////
-                //insertFiguraGeometrica(quad);
                 break;
             case RETANGULO:
                 RetanguloController retanguloController = new RetanguloController();
                 retanguloController.showRetanguloMenu();
-                //Retangulo ret = tela.askRetangulo();
-                //insertFiguraGeometrica(ret);
                 break;
             case TRIANGULO:
                 TrianguloController trianguloController = new TrianguloController();
                 trianguloController.showTrianguloMenu();
-                //Triangulo tri = tela.askTriangulo();
-                //insertFiguraGeometrica(tri);
                 break;
             case LOSANGO:
                 LosangoController losangoController = new LosangoController();
                 losangoController.showLosangoMenu();
-                //Losango los = tela.askLosango();
-                //insertFiguraGeometrica(los);
                 break;
             case CIRCULO:
                 CirculoController circuloController = new CirculoController();
                 circuloController.showCirculoMenu();
-                //Circulo cir = tela.askCirculo();
-                //insertFiguraGeometrica(cir);
                 break;
             case TRAPEZIO:
                 TrapezioController trapezioController = new TrapezioController();
                 trapezioController.showTrapezioMenu();
-                //Trapezio trap = tela.askTrapezio();
-                //insertFiguraGeometrica(trap);
                 break;
             case TEXTO:
-                tela.showLnMsg("Escolha uma figura geometrica!"); //////////
+                tela.showLnMsg("Escolha uma figura geometrica!");
                 mostrarMenu();
                 break;
             case RETA:
-                //tela.showLnMsg("Escolha uma figura geometrica!"); //////////
                 RetaController retaController = new RetaController();
                 retaController.showRetaMenu();
                 mostrarMenu();
@@ -113,8 +97,6 @@ public class AlessioPaint {
                 break;
             case DESENHAR:
                 desenharFiguras();
-                //new DesenhoBoard();
-                //canvas.desenhar(vetor);
                 mostrarMenu();
                 break;
             case SAIR:
@@ -123,16 +105,12 @@ public class AlessioPaint {
             default:
         }
 
-        //   } while (opcao != OpcoesMenuEnum.SAIR);
     }
 
     public void desenharFiguras() {
         if (figuraGeometricaArrayList.isEmpty()) {
             tela.showLnMsg("Lista vazia");
         } else {
-            /*for(int i = 0; i <=figuraGeometricaArrayList.size(); i++){
-                canvas.desenhar(figuraGeometricaArrayList.get(i), i);
-            }*/
             canvas.getFiguras(figuraGeometricaArrayList);
             canvas.setVisible(true);
 
@@ -171,14 +149,6 @@ public class AlessioPaint {
         return figuraGeometricaArrayList;
     }
 
-    // public FiguraGeometrica getFiguraIndiceLista(String indices) {
-//            if (indices.contains(String.valueOf(index))) {
-//                return figuraGeometricaArrayList.get(index);
-//            } else {
-//                tela.showLnMsg("Index Invalido");
-//                return null;
-//            }
-    //  }
     public void setNewValueToList(FiguraGeometrica figura, int index) {
 
         figuraGeometricaArrayList.set(index, figura);
@@ -222,8 +192,6 @@ public class AlessioPaint {
     }
 
     public void listar() {
-        //Retangulo retangulo = new Retangulo();
-        //insertFiguraGeométrica(retangulo, 1);
         for (int i = 0; i < figuraGeometricaArrayList.size(); i++) {
             if (figuraGeometricaArrayList.get(i) != null) {
                 System.out.println(figuraGeometricaArrayList.get(i).toString());
@@ -257,11 +225,10 @@ public class AlessioPaint {
 
             if (figuraRecuperada[i] != null) {
                 linha = figuraRecuperada[i].split(";");
-                if(linha[0].contains("reta")){
+                if (linha[0].contains("reta")) {
                     Reta reta = new Reta(Integer.parseInt(linha[1]));
                     figuraGeometricaArrayList.add(reta);
-                }
-                else if (linha[0].contains("quadrado")) {
+                } else if (linha[0].contains("quadrado")) {
                     Quadrado quad = new Quadrado(Integer.parseInt(linha[1]));
                     figuraGeometricaArrayList.add(quad);
 

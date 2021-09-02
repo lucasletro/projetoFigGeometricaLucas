@@ -9,15 +9,12 @@ import java.util.ArrayList;
 import pc2.lab.aula09.projetoFigGeometricaLucas.model.Circulo;
 import pc2.lab.aula09.projetoFigGeometricaLucas.model.FiguraGeometrica;
 import pc2.lab.aula09.projetoFigGeometricaLucas.view.CirculoConsole;
-//import pc2.lab.aula09.projetoFigGeometricaLucas.model.Losango;
-//import pc2.lab.aula09.projetoFigGeometricaLucas.view.LosangoConsole;
 
 /**
  *
  * @author Lucas Letro
  */
 public class CirculoController extends AlessioPaint {
-    
 
     public String getIndicesDosCirculos() {
         ArrayList<FiguraGeometrica> lista = super.getListaFiguraGeometrica();
@@ -59,7 +56,6 @@ public class CirculoController extends AlessioPaint {
                             circuloConsole.showLnMsg("Este indice é invalido.");
                         }
 
-                        //quad = (Quadrado) super.getFiguraIndiceLista(indices);
                     }
 
                     break;
@@ -84,10 +80,6 @@ public class CirculoController extends AlessioPaint {
                         }
 
                     }
-
-                    //arrayFig = super.getListaFiguraGeometrica();
-                    //quadrado console perguntar qual indice desejado (parametro indices)
-                    //super.listarindice toString()
                     break;
                 case 5:
                     //apagar
@@ -95,7 +87,7 @@ public class CirculoController extends AlessioPaint {
                     if ("".equals(indices)) {
                         circuloConsole.showLnMsg("Nao existe a figura na lista. ");
                     } else {
-                        super.setContador(super.getContador()-1);
+                        super.setContador(super.getContador() - 1);
                         int index = circuloConsole.askInt("Digite o index que deseja apagar:  " + indices);
                         if (indices.contains(String.valueOf(index))) {
                             super.excluirIndexDaLista(index);
@@ -103,13 +95,14 @@ public class CirculoController extends AlessioPaint {
                             circuloConsole.showLnMsg("Este indice é invalido.");
                         }
 
-                        //quad = (Quadrado) super.getFiguraIndiceLista(indices);
                     }
-
                     break;
 
-                default:
+                case 6:
                     super.mostrarMenu();
+                    break;
+                default:
+                    showCirculoMenu();
                     break;
             }
         } while (option < 6);

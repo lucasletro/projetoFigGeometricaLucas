@@ -15,7 +15,7 @@ import pc2.lab.aula09.projetoFigGeometricaLucas.view.QuadradoConsole;
  * @author Lucas Letro
  */
 public class QuadradoController extends AlessioPaint {
-    
+
     public String getIndicesDosQuadrados() {
         ArrayList<FiguraGeometrica> lista = super.getListaFiguraGeometrica();
         String indexes = "";
@@ -56,7 +56,6 @@ public class QuadradoController extends AlessioPaint {
                             quadradoConsole.showLnMsg("Este indice é invalido.");
                         }
 
-                        //quad = (Quadrado) super.getFiguraIndiceLista(indices);
                     }
 
                     break;
@@ -82,9 +81,6 @@ public class QuadradoController extends AlessioPaint {
 
                     }
 
-                    //arrayFig = super.getListaFiguraGeometrica();
-                    //quadrado console perguntar qual indice desejado (parametro indices)
-                    //super.listarindice toString()
                     break;
                 case 5:
                     //apagar
@@ -92,7 +88,7 @@ public class QuadradoController extends AlessioPaint {
                     if ("".equals(indices)) {
                         quadradoConsole.showLnMsg("Nao existe a figura na lista. ");
                     } else {
-                        super.setContador(super.getContador()-1);
+                        super.setContador(super.getContador() - 1);
                         int index = quadradoConsole.askInt("Digite o index que deseja apagar:  " + indices);
                         if (indices.contains(String.valueOf(index))) {
                             super.excluirIndexDaLista(index);
@@ -100,11 +96,13 @@ public class QuadradoController extends AlessioPaint {
                             quadradoConsole.showLnMsg("Este indice é invalido.");
                         }
 
-                        //quad = (Quadrado) super.getFiguraIndiceLista(indices);
                     }
                     break;
-                default:
+                case 6:
                     super.mostrarMenu();
+                    break;
+                default:
+                    showQuadradoMenu();
                     break;
             }
         } while (option < 6);
