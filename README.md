@@ -61,3 +61,13 @@ A Linguagem Unificada de Modelagem é uma linguagem de notação utilizada para 
 6. Do seu protótipo até esta etapa você acabou fazendo uso de comportamentos Polimórficos no seu trabalho prático. Qual foi o benefício sobre a visão de "Legibilidade" do código fonte? E sobre "organização" das classes?
 
 O polimorfismo permite que um mesmo nome represente varios comportamentos diferentes desta maneira deixando a classe mais legivel, organizada e reutilizavel.
+
+
+QUESTIONARIO 4 e 5.
+
+Ao decorrer do trabalho foi possivel aplicar os conceitos de encapsulamento,herança e polimorfismo, desta forma deixando o trabalho com uma representação mais fácil de ser compreendida. As fases no geral foram bem executadas, algumas funções deram mais trabalho ao fazer e tiveram alguns erros mais foram todos solucionados.
+
+DIAGRAMA
+![diagrama drawio](https://user-images.githubusercontent.com/83148640/132967083-37af9e8d-ec1d-44db-8fc9-0640eafc40a9.png)
+
+
