@@ -66,6 +66,7 @@ O polimorfismo permite que um mesmo nome represente varios comportamentos difere
 QUESTIONARIO 4 e 5.
 
 Ao decorrer do trabalho foi possivel aplicar os conceitos de encapsulamento,herança e polimorfismo, desta forma deixando o trabalho com uma representação mais fácil de ser compreendida. As fases no geral foram bem executadas, algumas funções deram mais trabalho ao fazer e tiveram alguns erros mais foram todos solucionados.
+O uso do MVC facilitou a manutenção e atualização do projeto, pois possui uma estrutura bem definida e separada.
 
 DIAGRAMA
 ![diagrama drawio](https://user-images.githubusercontent.com/83148640/132967083-37af9e8d-ec1d-44db-8fc9-0640eafc40a9.png)
